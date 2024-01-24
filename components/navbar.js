@@ -31,14 +31,14 @@ export default function Navbar() {
         <NavLogo />
 
         <div className="flex justify-evenly items-center">
-          <a className="ml-10 hidden md:flex" href="#">
+          <a className="ml-10 hidden md:flex hover:underline" href="#">
             Shop
           </a>
-          <a className="ml-10 hidden md:flex" href="#">
+          <a className="ml-10 hidden md:flex hover:underline" href="#">
             About Us
           </a>
 
-          <Button variant="ghost" size="icon" className="ml-10 hidden md:flex">
+          <Button variant="ghost" size="icon" className="ml-20 hidden md:flex">
             <User />
           </Button>
 
