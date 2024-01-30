@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       colors: {
         "murphy-gray": "#f8f8f8",
+        "murphy-hover": "#EFEFEF",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
