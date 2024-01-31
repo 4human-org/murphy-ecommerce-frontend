@@ -4,9 +4,9 @@ import GridItemComp from "./GridItemComp.jsx";
 
 export default function CategorySection({ sectionHeader }) {
   return (
-    <section className="flex flex-col justify-container items-center mb-24">
-      <div className="px-8 bg-murphy-gray mx-2 rounded-3xl md:mx-6 xl:mx-16">
-        <h1 className="py-2 text-2xl py-5 leading-relaxed tracking-wide">
+    <section className="flex bg-neutral-100/75 flex-col justify-container items-center mb-12">
+      <div className="p-4 mx-2 md:mx-6 xl:mx-16">
+        <h1 className="p-4 text-2xl font-semibold tracking-tight leading-relaxed">
           {sectionHeader}
         </h1>
         <GridItemComp />
