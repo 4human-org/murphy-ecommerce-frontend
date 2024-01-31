@@ -1,5 +1,6 @@
 import product_image from './product_image_example.jpg'
 
+// DUMMY DATA FOR SEARCHBAR COMPONENT
 export const products = [
   {
     product_img: product_image,

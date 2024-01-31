@@ -3,6 +3,8 @@ import product_image from '@/app/search_bar_demo/search_bar_data/product_image_e
 import { formatCurrency } from '@/lib/utils';
 
 export default function Products({ query, currentPage }) {
+
+  // Function to filter out given products from dummy_data
   const fetchFilteredProducts = (query, currentPage) => {
     // Placeholder for actual logic to fetch and filter products based on the query
     const filteredProducts = []; // Placeholder for filtered products

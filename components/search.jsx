@@ -7,10 +7,14 @@ export default function Search({ placeholder }) {
   const pathname = usePathname();
   const { replace } = useRouter();
 
+  // Uses debounce to ensure not updating on every letter input
   const handleSearch = useDebouncedCallback((term) => {
     const params = new URLSearchParams(searchParams);
+
+    // By default, set params to page=1
     params.set('page', '1');
 
+    // If user input exists, update the query with the term.
     if (term) {
       params.set('query', term);
     } else {
@@ -18,6 +22,8 @@ export default function Search({ placeholder }) {
     }
 
     replace(`${pathname}?${params.toString()}`);
+
+    // Set delay of params update
   }, 100);
 
   return (
@@ -31,6 +37,7 @@ export default function Search({ placeholder }) {
         onChange={(e) => {
           handleSearch(e.target.value);
         }}
+        // Sets default search value to whatever the query is when the page is loaded initially
         defaultValue={searchParams.get('query')?.toString()}
       />
     </div>
