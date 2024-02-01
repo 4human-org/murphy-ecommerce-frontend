@@ -1,6 +1,9 @@
 "use client";
 import Link from "next/link";
+// next/link signifies to Next.JS to pre-render the page it links to
+// which helps speed up loading times for those pages
 
+// footer , nav, and small elements for semantic HTML and accessibility
 export default function Footer() {
   return (
     <footer className="text-center flex flex-col bg-neutral-100/75 h-fill bottom-0 w-screen">
