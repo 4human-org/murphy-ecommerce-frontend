@@ -8,20 +8,32 @@ export default function TempItemComp({ productName, price, imageURL }) {
   const img = imageURL ? (
     <img
       src={imageURL}
-      className="w-full h-full max-h-52 max-w-56 rounded-lg object-cover"
+      className="h-full w-full object-cover object-center lg:h-full lg:w-full"
     />
   ) : (
     <img
       src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"
-      className="w-full h-full max-h-52 max-w-56 rounded-lg object-fit"
+      className="h-full w-full object-cover object-center lg:h-full lg:w-full"
     />
   );
 
   return (
-    <div className="p-4 text-xs transition ease-in-out rounded-md border-neutral-100/75 hover:border-neutral-300 border hover:bg-neutral-200/75 sm:text-lg">
+  <div className="group relative">
+    <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-56">
       {img}
-      <h4 className="mt-2">{title}</h4>
-      <h4 className="font-semibold">${cost}</h4>
     </div>
+    <div className="mt-4 flex justify-between">
+      <div>
+        <h3 className="text-sm text-neutral-700">
+          <a href="#">
+            <span aria-hidden="true" className="absolute inset-0" />
+            {title}
+          </a>
+        </h3>
+      </div>
+      <p className="text-sm font-medium text-neutral-900">${cost}</p>
+    </div>
+  </div>
   );
 }
+
