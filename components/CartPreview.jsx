@@ -20,11 +20,11 @@ function CartItem() {
         <div className="flex h-12 w-full items-center justify-between">
           <div className="flex items-center">
             <Button variant="ghost" size="smicon">
-              <Minus />
+              <Minus className="text-[#686868]" />
             </Button>
-            <div className="w-8 flex justify-center"> 3 </div>
+            <div className="w-8 flex justify-center text-[#686868]"> 3 </div>
             <Button variant="ghost" size="smicon">
-              <Plus />
+              <Plus className="text-[#686868]" />
             </Button>
           </div>
 
@@ -46,6 +46,11 @@ function CartPreview() {
         <CartItem />
         <CartItem />
         <CartItem />
+      </div>
+
+      <div className="flex justify-between my-3 text-lg font-semibold">
+        <div>Total: </div>
+        <div>$14.97</div>
       </div>
 
       <Button className="w-full">Checkout</Button>
