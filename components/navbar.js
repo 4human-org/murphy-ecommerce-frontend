@@ -1,5 +1,7 @@
 import { AlignJustify, ShoppingCart, User } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "./ui/NavBarButton";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import CartPreview from "./CartPreview";
 // A Next.Js component for the navbar:
 
 function NavLogo() {
@@ -42,9 +44,17 @@ export default function Navbar() {
             <User />
           </Button>
 
-          <Button variant="ghost" size="icon" className="ml-8">
-            <ShoppingCart />
-          </Button>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="ghost" size="icon" className="ml-8">
+                <ShoppingCart />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <CartPreview />
+            </PopoverContent>
+          </Popover>
+
           <Button variant="ghost" size="icon" className="md:hidden ml-8">
             <AlignJustify />
           </Button>
