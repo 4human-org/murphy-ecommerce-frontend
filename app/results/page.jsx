@@ -26,7 +26,7 @@ export default function Page() {
 
   return (
     <div>
-      <div className='flex w-3/4 items-center justify-between'>
+      <div className='flex items-center justify-between '>
         {query ? <h1 className='text-2xl'>Results for {query}</h1> : null}
       </div>
       <Products query={query} currentPage={currentPage} />

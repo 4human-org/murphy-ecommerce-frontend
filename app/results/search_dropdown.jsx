@@ -6,10 +6,8 @@ import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
 const Search_Dropdown = ({ query, isFocused, setIsFocused }) => {
   const [suggestions, setSuggestions] = useState([]);
-
   const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
+  const router = useRouter();
 
   // Uses debounce to ensure not updating on every letter input
   const handleSuggestionClick = (term) => {
@@ -24,8 +22,7 @@ const Search_Dropdown = ({ query, isFocused, setIsFocused }) => {
     } else {
       params.delete('query');
     }
-
-    replace(`${pathname}?${params.toString()}`);
+    router.push(`/results?${params.toString()}`);
     setIsFocused(false);
   };
 
@@ -52,6 +49,7 @@ const Search_Dropdown = ({ query, isFocused, setIsFocused }) => {
         if (i > 2) return;
         return (
           <li
+            onBlur={() => setIsFocused(false)}
             key={i}
             className='relative  pl-2 pb-1 cursor-pointer hover:bg-gray-600/20 rounded '
           >
@@ -68,10 +66,7 @@ const Search_Dropdown = ({ query, isFocused, setIsFocused }) => {
   }
 
   return (
-    <ul
-      className='absolute min-h-1 pl-8 pr-8 pt-2 pb-1 bg-white flex flex-col rounded flex-1 w-full'
-      onBlur={() => setIsFocused(false)}
-    >
+    <ul className='absolute min-h-1 pl-8 pr-8 pt-2 pb-1 bg-white flex flex-col rounded flex-1 w-full'>
       {renderQuery()}
     </ul>
   );

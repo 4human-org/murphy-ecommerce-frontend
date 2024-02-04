@@ -1,13 +1,14 @@
 'use client';
 import Searchbar_Dropdown from '@/app/results/search_dropdown';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react'; // Import useState hook
+import { useEffect, useState } from 'react'; // Import useState hook
 
 export default function Search({ placeholder }) {
   const [searchTerm, setSearchTerm] = useState(''); // State to store search term
   const [isFocused, setIsFocused] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
+
 
   const handleSearch = (event) => {
     event.preventDefault(); // Prevent default form submission
@@ -23,7 +24,7 @@ export default function Search({ placeholder }) {
   };
 
   return (
-    <div className='relative flex-col flex-1 self-center'>
+    <div className='relative flex-col flex-1 self-center mb-3 w-3/4'>
       <form onSubmit={handleSearch}>
         {/* Use form onSubmit instead of input onSubmit */}
         <div className='relative flex  flex-1 flex-shrink-0'>
