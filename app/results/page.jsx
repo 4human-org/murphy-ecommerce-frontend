@@ -1,6 +1,5 @@
 'use client';
 
-import Search from '@/components/search';
 import Products from './products';
 import { useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -8,7 +7,6 @@ import { useState, useEffect } from 'react';
 export default function Page() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState('');
-
   // Sets current page to inital searchParams, default value is 1
   const [currentPage, setCurrentPage] = useState(
     Number(searchParams.get('page'))
@@ -27,16 +25,11 @@ export default function Page() {
   }, [searchParams]);
 
   return (
-    <div className='w-full'>
-      <div className='flex w-full items-center justify-between'>
-        <h1 className='text-2xl'>Products</h1>
+    <div>
+      <div className='flex w-3/4 items-center justify-between'>
+        {query ? <h1 className='text-2xl'>Results for {query}</h1> : null}
       </div>
-      <div className='mt-4 flex items-center justify-between gap-2 md:mt-8'>
-        <Search placeholder='Search products...' />
-      </div>
-      <div>
-        <Products query={query} currentPage={currentPage} />
-      </div>
+      <Products query={query} currentPage={currentPage} />
     </div>
   );
 }

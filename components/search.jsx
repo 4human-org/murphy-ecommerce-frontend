@@ -1,44 +1,49 @@
 'use client';
+import Searchbar_Dropdown from '@/app/results/search_dropdown';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
+import { useState } from 'react'; // Import useState hook
 
 export default function Search({ placeholder }) {
+  const [searchTerm, setSearchTerm] = useState(''); // State to store search term
+  const [isFocused, setIsFocused] = useState(false);
   const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { replace } = useRouter();
+  const router = useRouter();
 
-  // Uses debounce to ensure not updating on every letter input
-  const handleSearch = useDebouncedCallback((term) => {
+  const handleSearch = (event) => {
+    event.preventDefault(); // Prevent default form submission
     const params = new URLSearchParams(searchParams);
-
-    // By default, set params to page=1
     params.set('page', '1');
-
-    // If user input exists, update the query with the term.
-    if (term) {
-      params.set('query', term);
+    if (searchTerm) {
+      params.set('query', searchTerm); // Set search query in URL params
     } else {
       params.delete('query');
     }
-
-    replace(`${pathname}?${params.toString()}`);
-
-    // Set delay of params update
-  }, 100);
+    router.push(`/results?${params.toString()}`);
+    setIsFocused(false)
+  };
 
   return (
-    <div className='relative flex flex-1 flex-shrink-0'>
-      <label htmlFor='search' className='sr-only'>
-        Search
-      </label>
-      <input
-        className='peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500'
-        placeholder={placeholder}
-        onChange={(e) => {
-          handleSearch(e.target.value);
-        }}
-        // Sets default search value to whatever the query is when the page is loaded initially
-        defaultValue={searchParams.get('query')?.toString()}
+    <div className='relative flex-col flex-1 self-center'>
+      <form onSubmit={handleSearch}>
+        {/* Use form onSubmit instead of input onSubmit */}
+        <div className='relative flex  flex-1 flex-shrink-0'>
+          <label htmlFor='search' className='sr-only'>
+            Search
+          </label>
+          <input
+            className='peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500'
+            placeholder={placeholder}
+            value={searchTerm}
+            onClick={() => setIsFocused(true)}
+            onChange={(e) => setSearchTerm(e.target.value)} // Update searchTerm on input change
+          />
+        </div>
+      </form>
+
+      <Searchbar_Dropdown
+        query={searchTerm}
+        isFocused={isFocused}
+        setIsFocused={setIsFocused}
       />
     </div>
   );
