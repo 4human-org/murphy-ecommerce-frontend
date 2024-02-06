@@ -18,7 +18,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        "murphy-gray": "#f8f8f8",
+        "murphy-teal": "#42A29E",
+        "murphy-border-salmon": "#F4E4E4",
+        "murphy-hover-salmon": "#F9F3F3",
+        "murphy-bg-salmon": "#FBFAF8",
+        "murphy-gray": "#F8F8F8",
         "murphy-hover": "#EFEFEF",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

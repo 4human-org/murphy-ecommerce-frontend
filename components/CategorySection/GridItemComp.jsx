@@ -1,13 +1,13 @@
 "use client";
 
-import TempItemComp from "./TempItemComp.jsx";
-import DummyData from "../utils/DummyData.js";
+import TempItemComp from "./ItemComp.jsx";
+import DummyData from "../../utils/DummyData.js";
 
 export default function GridItemComp() {
   const products = DummyData()
     .slice(0, 6)
     .map(({ productName, price, imageURL }) => (
-      <TempItemComp
+      <ItemComp
         key={productName}
         productName={productName}
         price={price}
