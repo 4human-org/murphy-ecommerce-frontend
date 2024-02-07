@@ -6,7 +6,7 @@ function NavLogo() {
   const imgUrl = "/logo.webp";
 
   return (
-    <a href="#">
+    <a href="/">
       <div className="flex items-center">
         <img className="rounded-full h-16" src={imgUrl} />
         <div className="ml-2 hidden lg:block">
