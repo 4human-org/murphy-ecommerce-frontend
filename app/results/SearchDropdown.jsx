@@ -4,12 +4,11 @@ import { useEffect, useState } from 'react';
 import product_data from './search_bar_data/MOCK_DATA.json';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
-const Search_Dropdown = ({ query, isFocused, setIsFocused }) => {
+const SearchDropdown = ({ query, isFocused, setIsFocused }) => {
   const [suggestions, setSuggestions] = useState([]);
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  // Uses debounce to ensure not updating on every letter input
   const handleSuggestionClick = (term) => {
     const params = new URLSearchParams(searchParams);
 
@@ -71,4 +70,4 @@ const Search_Dropdown = ({ query, isFocused, setIsFocused }) => {
     </ul>
   );
 };
-export default Search_Dropdown;
+export default SearchDropdown;

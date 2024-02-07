@@ -16,7 +16,7 @@ export default function Page() {
   useEffect(() => {
     // If query is exists in searchParams, update query state accordingly
     if (searchParams.get('query')) {
-      setQuery(searchParams.get('query')?.toString());
+      setQuery(searchParams.get('query').toString());
 
       // If query gets deleted by user and gets set to null, update query to empty string
     } else if (searchParams.get('query')?.toString() == null) {

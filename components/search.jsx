@@ -1,5 +1,5 @@
 'use client';
-import Searchbar_Dropdown from '@/app/results/search_dropdown';
+import SearchDropdown from '@/app/results/SearchDropdown';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react'; // Import useState hook
 
@@ -41,7 +41,7 @@ export default function Search({ placeholder }) {
         </div>
       </form>
 
-      <Searchbar_Dropdown
+      <SearchDropdown
         query={searchTerm}
         isFocused={isFocused}
         setIsFocused={setIsFocused}
