@@ -16,7 +16,7 @@ export default function GridItemComp() {
     ));
 
   return (
-    <div className="grid grid-cols-2 pb-10 gap-4 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6 xl:gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 pb-10 gap-4 md:grid-cols-3 sm:gap-3 lg:grid-cols-6 xl:gap-5">
       {products}
     </div>
   );

@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className} style={{overflowX: "hidden"}}>
         <Navbar />
+        
         {children}
         <Footer />
       </body>
