@@ -6,6 +6,7 @@ export default function getDummyData() {
       price: 23.5,
       imageURL:
         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
+      quantity: 1,
     },
     {
       productId: 2,
@@ -13,6 +14,7 @@ export default function getDummyData() {
       price: 3.25,
       imageURL:
         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      quantity: 1,
     },
     {
       productId: 3,
@@ -20,6 +22,7 @@ export default function getDummyData() {
       price: 82.0,
       imageURL:
         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg",
+      quantity: 1,
     },
     {
       productId: 4,
@@ -27,6 +30,7 @@ export default function getDummyData() {
       price: 10.5,
       imageURL:
         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      quantity: 1,
     },
     {
       productId: 5,
@@ -34,6 +38,7 @@ export default function getDummyData() {
       price: 7.99,
       imageURL:
         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg",
+      quantity: 1,
     },
     {
       productId: 6,
@@ -41,6 +46,7 @@ export default function getDummyData() {
       price: 999.99,
       imageURL:
         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
+      quantity: 1,
     },
     {
       productId: 7,
@@ -48,6 +54,7 @@ export default function getDummyData() {
       price: 100.5,
       imageURL:
         "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-05.jpg",
+      quantity: 1,
     },
     {
       productId: 8,
@@ -55,6 +62,7 @@ export default function getDummyData() {
       price: 101.5,
       imageURL:
         "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fhlbj9ceadoh91.jpg",
+      quantity: 1,
     },
     {
       productId: 9,
@@ -62,6 +70,7 @@ export default function getDummyData() {
       price: 102.5,
       imageURL:
         "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fhlbj9ceadoh91.jpg",
+      quantity: 1,
     },
     {
       productId: 10,
@@ -69,6 +78,7 @@ export default function getDummyData() {
       price: 103.5,
       imageURL:
         "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fhlbj9ceadoh91.jpg",
+      quantity: 1,
     },
   ];
 }

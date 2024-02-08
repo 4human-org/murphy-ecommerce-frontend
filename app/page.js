@@ -1,7 +1,4 @@
-import { Divide } from "lucide-react";
-import Image from "next/image";
 import CartPage from "../components/CartPage/CartPage.jsx";
-import CategorySection from "../components/CategorySection/CategorySection.jsx";
 
 export default function Home() {
   return (

@@ -1,5 +1,32 @@
 "use client";
 
-export default function OrderSummary() {
-  return <div></div>;
+import CheckoutButton from "./CheckOutButton.jsx";
+
+export default function OrderSummary({ checkoutList, checkoutPrice }) {
+  return (
+    <div className="flex flex-col mt-8 rounded-xl bg-murphy-bg-salmon border-2 border-murphy-border-salmon md:ml-2 md:mt-0 md:h-fit md:grow md:max-w-md xl:ml-6">
+      <section className="flex flex-col text-sm m-4 p-8 rounded-xl bg-murphy-bg-salmon border-2 border-bg-gray-400 gap-8">
+        <div className="flex font-medium text-xl">
+          <h2>Order Summary</h2>
+        </div>
+        <div className="flex justify-between">
+          Price <span>${checkoutPrice}</span>
+        </div>
+
+        <div className="flex justify-between">
+          Discount <span>$31.90</span>
+        </div>
+        <div className="flex justify-between">
+          Shipping <span className="text-green-600">Free</span>
+        </div>
+        <div className="flex justify-between">
+          Coupon Applied <span>$0.00</span>
+        </div>
+        <div className="flex justify-between border-t-2 pt-8">
+          TOTAL <span className="font-medium">${checkoutPrice - 31.9}</span>
+        </div>
+        <CheckoutButton checkoutList={checkoutList} />
+      </section>
+    </div>
+  );
 }
