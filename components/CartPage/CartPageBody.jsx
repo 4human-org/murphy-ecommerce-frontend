@@ -27,7 +27,7 @@ export default function CartPageBody({
             {cartItemAmount} {itemText}
           </span>
         </h4>
-        <section className="flex flex-col rounded-xl pb-8 bg-murphy-bg-salmon border-2 border-murphy-border-salmon">
+        <section className="flex flex-col rounded-xl pb-8 border-2">
           {products}
         </section>
       </div>
