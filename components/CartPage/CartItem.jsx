@@ -22,14 +22,14 @@ export default function CartItem({ product, setCheckoutList }) {
   }, [productQuantity]);
 
   return (
-    <div className="flex max-h-36 text-sm font-medium text-neutral-900 mx-2 my-1 border-2 border-b-gray-300 hover:rounded-xl hover:border-2 ">
+    <div className="flex max-h-36 text-sm font-medium text-neutral-900 mx-2 my-1 border-b-gray-300 hover:rounded-xl hover:border-2 ">
       <img
         src={
           imageURL
             ? imageURL
             : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"
         }
-        className="h-auto w-36 object-cover object-center p-2.5"
+        className="h-auto w-36 object-cover object-center p-2.5 rounded-2xl "
       />
       <div className="flex flex-col grow p-4 justify-center">
         <div className="flex justify-between">
