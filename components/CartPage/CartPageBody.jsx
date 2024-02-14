@@ -21,12 +21,12 @@ export default function CartPageBody({
   return (
     <div className="md:flex container">
       <div className="md:grow md:mr-2 xl:mr-6">
-        <h4 className="text-sm font-medium text-neutral-900 mb-3">
+        <h2 className="text-sm font-medium text-neutral-900 mb-3">
           <span className="mx-4 text-2xl">Cart</span>
           <span className="text-gray-500">
             {cartItemAmount} {itemText}
           </span>
-        </h4>
+        </h2>
         <section className="flex flex-col mb-12">
           {products}
         </section>

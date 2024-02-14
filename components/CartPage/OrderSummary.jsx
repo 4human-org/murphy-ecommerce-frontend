@@ -5,7 +5,7 @@ import CheckoutButton from "./CheckOutButton.jsx";
 export default function OrderSummary({ checkoutList, checkoutPrice }) {
   return (
     
-      <section className="flex flex-col text-sm p-8 rounded-xl bg-murphy-bg-salmon border-2 border-bg-gray-400 gap-8">
+      <section className="flex flex-col text-sm p-8 rounded-xl bg-murphy-bg-salmon min-w-[300px] border-2 border-bg-gray-400 gap-8">
         <div className="flex font-medium text-xl">
           <h2>Order Summary</h2>
         </div>
@@ -23,7 +23,7 @@ export default function OrderSummary({ checkoutList, checkoutPrice }) {
           Coupon Applied <span>$0.00</span>
         </div>
         <div className="flex justify-between border-t-2 pt-8">
-          TOTAL <span className="font-medium">${checkoutPrice - 31.9}</span>
+          Total <span className="font-medium">${checkoutPrice - 31.9}</span>
         </div>
         <CheckoutButton checkoutList={checkoutList} />
       </section>

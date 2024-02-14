@@ -33,12 +33,12 @@ export default function CartItem({ product, setCheckoutList }) {
       />
       <div className="flex flex-col grow p-4 justify-center">
         <div className="flex justify-between">
-          <h4 className="text-base font-semibold">{title}</h4>
-          <h4 className="font-semibold flex items-center">${cost}</h4>
+          <h3 className="text-base font-semibold">{title}</h3>
+          <span className="font-semibold flex items-center">${cost}</span>
         </div>
-        <h5>
+        <span>
           <span className="text-gray-500">Color</span> {placeHolderColor}
-        </h5>
+        </span>
         <div className="sm:flex items-center">
           <QuantityButton
             productId={productId}
