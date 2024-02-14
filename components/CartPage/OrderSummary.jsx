@@ -5,7 +5,7 @@ import CheckoutButton from "./CheckOutButton.jsx";
 export default function OrderSummary({ checkoutList, checkoutPrice }) {
   return (
     
-      <section className="flex flex-col text-sm m-4 p-8 rounded-xl bg-murphy-bg-salmon border-2 border-bg-gray-400 gap-8">
+      <section className="flex flex-col text-sm p-8 rounded-xl bg-murphy-bg-salmon border-2 border-bg-gray-400 gap-8">
         <div className="flex font-medium text-xl">
           <h2>Order Summary</h2>
         </div>
