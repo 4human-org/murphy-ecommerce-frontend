@@ -27,11 +27,14 @@ export default function CartPageBody({
             {cartItemAmount} {itemText}
           </span>
         </h2>
-        <section className="flex flex-col mb-12">
-          {products}
-        </section>
+        <section className="flex flex-col mb-12">{products}</section>
       </div>
-      <OrderSummary checkoutList={checkoutList} checkoutPrice={checkoutPrice} />
+      <div className="sticky top-0">
+        <OrderSummary
+          checkoutList={checkoutList}
+          checkoutPrice={checkoutPrice}
+        />
+      </div>
     </div>
   );
 }
