@@ -22,7 +22,7 @@ export default function CartItem({ product, setCheckoutList }) {
   }, [productQuantity]);
 
   return (
-    <div className="flex max-h-36 text-sm font-medium text-neutral-900 mx-2 my-1 border-b-gray-300 hover:rounded-xl hover:border-2 ">
+    <div className="flex max-h-36 text-sm font-medium text-neutral-900 mx-2 my-1 rounded-2xl hover:bg-gray-50">
       <img
         src={
           imageURL
