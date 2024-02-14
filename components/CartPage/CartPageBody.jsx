@@ -19,19 +19,22 @@ export default function CartPageBody({
   }, [checkoutList]);
 
   return (
-    <div className="mx-5 my-1 md:flex">
+    <div className="md:flex container">
       <div className="md:grow md:mr-2 xl:mr-6">
-        <h4 className="text-sm font-medium text-neutral-900 mb-3">
+        <h2 className="text-sm font-medium text-neutral-900 mb-3">
           <span className="mx-4 text-2xl">Cart</span>
           <span className="text-gray-500">
             {cartItemAmount} {itemText}
           </span>
-        </h4>
-        <section className="flex flex-col rounded-xl pb-8 bg-murphy-bg-salmon border-2 border-murphy-border-salmon">
-          {products}
-        </section>
+        </h2>
+        <section className="flex flex-col mb-12">{products}</section>
       </div>
-      <OrderSummary checkoutList={checkoutList} checkoutPrice={checkoutPrice} />
+      <div className="sticky top-0">
+        <OrderSummary
+          checkoutList={checkoutList}
+          checkoutPrice={checkoutPrice}
+        />
+      </div>
     </div>
   );
 }

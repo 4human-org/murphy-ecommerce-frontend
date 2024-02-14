@@ -11,7 +11,7 @@ function NavLogo() {
         <img className="rounded-full h-16" src={imgUrl} />
         <div className="ml-2 hidden lg:block">
           <div className="text-[#064790] font-bold">
-            MURPHY CHARITABLE FOUNDATION UGANDA
+            <h1>MURPHY CHARITABLE FOUNDATION UGANDA</h1>
           </div>
           <div className="text-[#67B32E] font-bold flex justify-evenly items-center break-none">
             <div className="bg-[#67B32E] w-full h-[2px] mr-2"></div>
