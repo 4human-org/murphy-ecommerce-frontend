@@ -10,8 +10,13 @@ export default function LoginPage() {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    console.log("Email:", email);
-    console.log("Password:", password);
+    const payload = JSON.stringify({
+      email,
+      password,
+    });
+
+    // handle login endpoint request here
+
     emailRef.current.value = "";
     passwordRef.current.value = "";
   };
