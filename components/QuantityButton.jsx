@@ -53,7 +53,7 @@ export default function QuantityButton({
         <div className="flex">
           <div
             id="custom-input-number"
-            className="flex justify-evenly w-8 h-full w-full outline-none focus:outline-none text-center bg-murphy-bg-salmon font-medium text-md hover:text-black focus:text-black md:text-base cursor-default flex items-center text-gray-700 outline-none"
+            className="flex justify-evenly w-8 h-full outline-none focus:outline-none text-center bg-murphy-bg-salmon font-medium text-md hover:text-black focus:text-black md:text-base cursor-default items-center text-gray-700"
             name="custom-input-number"
           >
             {number}
