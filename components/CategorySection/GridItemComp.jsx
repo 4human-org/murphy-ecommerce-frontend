@@ -1,6 +1,6 @@
 "use client";
 
-import TempItemComp from "./ItemComp.jsx";
+import ItemComp from "./ItemComp.jsx";
 import DummyData from "../../utils/DummyData.js";
 
 export default function GridItemComp() {
