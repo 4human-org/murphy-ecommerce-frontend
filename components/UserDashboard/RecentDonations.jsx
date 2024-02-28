@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import DummyData from "../../utils/DummyData.js";
 
-export default function ReentDonations() {
+export default function RecentDonations() {
 
     const products = [
         { name: 'Product 1', quantity: 5, total: 130.0 },
