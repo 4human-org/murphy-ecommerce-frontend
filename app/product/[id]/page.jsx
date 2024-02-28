@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ImageSwapper from '../ImageSwapper';
+import ImageSwapper from '../../../components/ProductPage/ImageSwapper';
 import ErrorPage from 'next/error';
-import ProductInformation from '../ProductInformation';
+import ProductInformation from '../../../components/ProductPage/ProductInformation';
 import { fetchProductById } from '@/utils/FetchProductById';
 
 // Example product with image array for image swapper component
