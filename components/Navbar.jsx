@@ -1,5 +1,7 @@
+"use client"
+
 import { AlignJustify, ShoppingCart, User } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "./ui/Button";
 // A Next.Js component for the navbar:
 
 function NavLogo() {
@@ -41,7 +43,6 @@ export default function Navbar() {
           <Button variant="ghost" size="icon" className="ml-20 hidden md:flex">
             <User />
           </Button>
-
           <Button variant="ghost" size="icon" className="ml-8">
             <ShoppingCart />
           </Button>

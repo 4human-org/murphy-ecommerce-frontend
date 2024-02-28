@@ -1,6 +1,8 @@
+"use client"
+
 import product_data from './search_bar_data/MOCK_DATA.json';
-import product_image from '@/app/results/search_bar_data/product_image_example.jpg';
-import { formatCurrency } from '@/lib/utils';
+import product_image from './search_bar_data/product_image_example.jpg';
+import { formatCurrency } from '../../lib/utils';
 
 export default function Products({ query, currentPage }) {
   // Function to filter out given products from dummy_data
