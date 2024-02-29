@@ -3,6 +3,12 @@
 import CheckoutButton from "./CheckOutButton.jsx";
 
 export default function OrderSummary({ checkoutList, checkoutPrice }) {
+  const discount = 31.9;
+  const total =
+    (checkoutPrice - discount).toFixed(2) < 0
+      ? "0.00"
+      : (checkoutPrice - discount).toFixed(2);
+
   return (
     <section className="flex flex-col text-sm p-8 rounded-xl bg-murphy-bg-salmon min-w-[300px] h-max border-2 border-bg-gray-400 gap-8 ">
       <div className="flex font-medium text-xl">
@@ -13,7 +19,7 @@ export default function OrderSummary({ checkoutList, checkoutPrice }) {
       </div>
 
       <div className="flex justify-between">
-        Discount <span>$31.90</span>
+        Discount <span>${discount}</span>
       </div>
       <div className="flex justify-between">
         Shipping <span className="text-green-600">Free</span>
@@ -22,7 +28,7 @@ export default function OrderSummary({ checkoutList, checkoutPrice }) {
         Coupon Applied <span>$0.00</span>
       </div>
       <div className="flex justify-between border-t-2 pt-8">
-        Total <span className="font-medium">${checkoutPrice - 31.9}</span>
+        Total <span className="font-medium">${total}</span>
       </div>
       <CheckoutButton checkoutList={checkoutList} />
     </section>
