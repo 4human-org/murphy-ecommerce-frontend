@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-export default function LoginPage() {
+export default function ManualLogin() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -20,6 +20,7 @@ export default function LoginPage() {
     emailRef.current.value = "";
     passwordRef.current.value = "";
   };
+  
   return (
     <main className="flex">
       <section className="flex flex-col py-12 px-16">
@@ -34,10 +35,10 @@ export default function LoginPage() {
                 placeholder="Email Address"
                 ref={emailRef}
                 className="peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
-                autocomplete="NA"
+                autoComplete="NA"
               />
               <label
-                for="email"
+                htmlFor="email"
                 className="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800"
               >
                 Email Address
@@ -53,7 +54,7 @@ export default function LoginPage() {
                 className="peer peer mt-1 w-full border-b-2 border-gray-300 px-0 py-1 placeholder:text-transparent focus:border-gray-500 focus:outline-none"
               />
               <label
-                for="password"
+                htmlFor="password"
                 className="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800"
               >
                 Password
@@ -63,7 +64,7 @@ export default function LoginPage() {
               <a href="/#">Forgot password?</a>
             </div>
             <div className="flex items-center justify-between">
-              <label for="remember_me" className="block text-sm text-gray-900">
+              <label htmlFor="remember_me" className="block text-sm text-gray-900">
                 Remember me
               </label>
               <input
