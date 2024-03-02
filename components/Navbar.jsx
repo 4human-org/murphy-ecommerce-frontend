@@ -4,7 +4,7 @@ import { AlignJustify, ShoppingCart, User } from "lucide-react";
 import { Button } from "./ui/Button";
 import NavLogo from "./NavLogo";
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "/components/ui/avatar";
 import Link from "next/link";
 
 // A Next.Js component for the navbar:
@@ -17,9 +17,8 @@ export default function Navbar() {
 
         <div className="flex justify-evenly items-center">
           <AvatarButton />
-          <Button variant="ghost" size="icon" className="ml-8">
-            <ShoppingCart />
-          </Button>
+
+          <CartButton />
           <Button variant="ghost" size="icon" className="md:hidden ml-8">
             <AlignJustify />
           </Button>
@@ -37,6 +36,16 @@ function AvatarButton() {
           <User />
         </AvatarFallback>
       </Avatar>
+    </Link>
+  );
+}
+
+function CartButton() {
+  return (
+    <Link href="/cart">
+      <Button variant="ghost" size="icon" className="ml-8">
+        <ShoppingCart />
+      </Button>
     </Link>
   );
 }
