@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import { SECRET_ROUTE } from "lib/routes";
 import { signIn, useUser } from "lib/auth";
+import NextAuthLogins from "@/components/LoginPage/NextAuthLogins";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -109,6 +110,7 @@ export default function LoginPage() {
             </div>
           </form>
         </div>
+        <NextAuthLogins />
       </section>
     </main>
   );
