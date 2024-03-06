@@ -1,0 +1,16 @@
+name: Test npm run build
+on:
+  pull_request:
+    branches:
+    - main
+jobs:
+  build-project:
+    name: Build Next.js project
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    - name: Install the npm dependencies
+      uses: npm install
+    - name: Build project assets
+      uses: npm run build
