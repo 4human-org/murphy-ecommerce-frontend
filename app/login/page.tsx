@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import { SECRET_ROUTE } from "lib/routes";
 import { signIn, useUser } from "lib/auth";
+import LoginSeparator from "../../components/LoginPage/LoginSeparator";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -34,10 +35,9 @@ export default function LoginPage() {
 
   return (
     <main className="flex">
-      <section className="flex flex-col py-12 px-16">
-        <div className="text-xl tracking-wide mb-10">Sign In</div>
-
-        <div className="mt-5 mx-5">
+      <section className="flex flex-row px-16 py-12">
+        <div className="mx-5 mt-5 flex flex-col">
+          <p className="mb-10 text-xl tracking-wide">Sign In</p>
           <form onSubmit={handleSubmit}>
             <div className="relative mt-6">
               <input
@@ -50,7 +50,7 @@ export default function LoginPage() {
               />
               <label
                 htmlFor="email"
-                className="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800"
+                className="pointer-events-none absolute left-0 top-0 origin-left -translate-y-1/2 transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800"
               >
                 Email Address
               </label>
@@ -67,12 +67,12 @@ export default function LoginPage() {
               />
               <label
                 htmlFor="password"
-                className="pointer-events-none absolute top-0 left-0 origin-left -translate-y-1/2 transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800"
+                className="pointer-events-none absolute left-0 top-0 origin-left -translate-y-1/2 transform text-sm text-gray-800 opacity-75 transition-all duration-100 ease-in-out peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:pl-0 peer-focus:text-sm peer-focus:text-gray-800"
               >
                 Password
               </label>
             </div>
-            <div className="text-sm my-12 font-semibold text-gray-700 hover:text-black underline">
+            <div className="my-12 text-sm font-semibold text-gray-700 underline hover:text-black">
               <a href="/#">Forgot password?</a>
             </div>
             <div className="flex items-center justify-between">
@@ -86,13 +86,13 @@ export default function LoginPage() {
                 id="rememberMe"
                 name="rememberMe"
                 type="checkbox"
-                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
               />
             </div>
             <div className="my-12 flex justify-center">
               <button
                 type="submit"
-                className="w-11/12 bg-blue-800 rounded-full p-1.5 text-white hover:bg-blue-900"
+                className="w-11/12 rounded-full bg-blue-800 p-1.5 text-white hover:bg-blue-900"
               >
                 Sign in
               </button>
@@ -109,6 +109,7 @@ export default function LoginPage() {
             </div>
           </form>
         </div>
+        <LoginSeparator />
       </section>
     </main>
   );
