@@ -18,10 +18,12 @@ export default function UserProfile({ firstName, lastName, profileURL }) {
           <div>{lastName ? lastName : "last"}</div>
         </div>
       </section>
-      <a href="/#" className="md:hover:bg-blue-900 flex md:py-4 md:px-8">
+      <a href="/#" className="flex md:hover:bg-blue-900 md:py-4 md:px-8">
+        <span className="mr-2">[icon]</span>
         <span>Donations</span>
       </a>
-      <a href="/#" className="md:hover:bg-blue-900 flex md:py-4 md:px-8">
+      <a href="/#" className="flex md:hover:bg-blue-900 md:py-4 md:px-8">
+        <span className="mr-2">[icon]</span>
         <span>Messages</span>
       </a>
     </main>
