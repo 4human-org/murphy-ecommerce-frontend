@@ -4,6 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { SECRET_ROUTE } from "lib/routes";
 import { signIn, useUser } from "lib/auth";
 import LoginForm from "./LoginForm";
+import LoginSeparator from "./LoginSeparator";
+import AlternativeLogins from "./AlternativeLogins";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -34,11 +36,10 @@ export default function LoginPage() {
 
   return (
     <main className="flex">
-      <section className="flex flex-col py-12 px-16">
-        <div className="text-xl tracking-wide mb-10">Sign In</div>
-
-        <div className="mt-5 mx-5"></div>
-        <LoginForm />
+      <section className="flex flex-row px-16 py-12">
+        <LoginForm handleSubmit={handleSubmit} />
+        <LoginSeparator />
+        <AlternativeLogins />
       </section>
     </main>
   );
