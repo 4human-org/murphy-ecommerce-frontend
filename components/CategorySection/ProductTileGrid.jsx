@@ -9,7 +9,7 @@ export default function ProductTileGrid() {
     const fetchData = async () => {
       try {
         // Fetch data from the API. Need to use the apiUrl variable from the env and have the backend server running.
-        const response = await fetch({ apiUrl } + "/products");
+        const response = await fetch("http://localhost:3030/products");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         setProducts(data);
