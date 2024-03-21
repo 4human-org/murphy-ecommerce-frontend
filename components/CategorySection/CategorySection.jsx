@@ -1,15 +1,15 @@
 "use client";
 
-import GridItemComp from "./GridItemComp.jsx";
+import ProductTileGrid from "./ProductTileGrid.jsx";
 
 export default function CategorySection({ sectionHeader }) {
   return (
-    <section className="flex flex-col justify-container items-center">
-      <div className="p-4 mx-2 md:mx-6 xl:mx-16 container">
-        <h1 className="py-5 text-2xl font-semibold tracking-tight leading-relaxed">
+    <section className="justify-container flex flex-col items-center">
+      <div className="container mx-2 p-4 md:mx-6 xl:mx-16">
+        <h1 className="py-5 text-2xl font-semibold leading-relaxed tracking-tight">
           {sectionHeader}
         </h1>
-        <GridItemComp />
+        <ProductTileGrid />
       </div>
     </section>
   );
