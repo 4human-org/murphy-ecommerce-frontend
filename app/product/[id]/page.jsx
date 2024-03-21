@@ -1,64 +1,38 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import ImageSwapper from '../../../components/ProductPage/ImageSwapper';
-import ErrorPage from 'next/error';
-import ProductInformation from '../../../components/ProductPage/ProductInformation';
-import { fetchProductById } from '@/utils/FetchProductById';
-
-// Example product with image array for image swapper component
-const exampleProduct = {
-  productId: 2,
-  productName: 'Example Product',
-  price: 24.99,
-  productImages: [
-    'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
-    'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
-  ],
-};
+import { useEffect, useState } from "react";
+import ImageSwapper from "../../../components/ProductPage/ImageSwapper";
+import ErrorPage from "next/error";
+import ProductInformation from "../../../components/ProductPage/ProductInformation";
 
 export default function Page({ params }) {
-  const [product, setProduct] = useState(null);
-  const [error, setError] = useState(null);
-
-  // Fetches product based on the url params
-  useEffect(() => {
-    const FetchProduct = async () => {
-      try {
-        const fetchedProduct = await fetchProductById(params.id);
-        // Appends product images to the fetched product data from DummyData.js
-        setProduct({
-          ...fetchedProduct,
-          productImages: exampleProduct.productImages,
-        });
-      } catch (error) {
-        // stores error in useState
-        setError({
-          statusCode: 404,
-          message: error.message || 'Product not found.',
-        });
-      }
-    };
-    FetchProduct();
-  }, []);
-
-  // If error, send user to error page
-  if (error) {
-    return <ErrorPage statusCode={404} />;
-  }
+  const [product, setProduct] = useState({
+    id: "1",
+    name: "School Backpack",
+    price: 25,
+    description: "Durable backpack for carrying school supplies.",
+    categories: ["Education"],
+    imagesUrl: ["https://picsum.photos/200"],
+    stock: 100,
+    sourcing: "Donated by XYZ Company",
+  });
 
   return (
-    <div className='flex mx-16 px-2 justify-center align-center mt-4'>
-      <div className='basis-1/3'>
-        {product && !error && (
-          <ImageSwapper images={product.productImages} />
-        )}
+    <div className="align-center mx-16 mt-4 flex justify-center px-2">
+      <div className="basis-1/3">
+        <ImageSwapper images={product.imagesUrl} />
       </div>
-      <div className='basis-1/3'>
-        {product && !error && (
-          <ProductInformation productInformation={product} />
-        )}
+      <div className="basis-1/3">
+        <ProductInformation
+          id={product.id}
+          name={product.name}
+          price={product.price}
+          description={product.description}
+          categories={product.categories}
+          imageUrl={product.imagesUrl[0]}
+          stock={product.stock}
+          sourcing={product.sourcing}
+        />
       </div>
     </div>
   );
