@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Tab from "./Tab";
+import {getCart} from "@/utils/CartManagement";
 
 const ProductInformation = ({
   id,
@@ -30,8 +31,25 @@ const ProductInformation = ({
     setActiveTab(tabId);
   };
 
-  // Will need global state or push to database to effectively add to cart so current functionality is not implemented
-  const addToCart = () => {};
+  function addToCart(productId, quantity) {
+
+    if (typeof window !== 'undefined') {
+
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingItem = cart.find(item => item.productId === productId);
+
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({productId, quantity});
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      console.log('Item added to cart');
+      console.log(getCart())
+    }
+  }
 
   // Renders tab data based on active tab
   const renderTabs = () => {
@@ -86,7 +104,7 @@ const ProductInformation = ({
 
         <button
           className="text-l ml-10 rounded bg-indigo-500 px-6 py-3 font-bold text-white"
-          onClick={addToCart}
+          onClick={() => addToCart(id, quantity )}
         >
           Add To Cart
         </button>
