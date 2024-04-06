@@ -1,0 +1,272 @@
+[
+  {
+    "name": "School Backpack",
+    "price": 25,
+    "description": "Durable backpack for carrying school supplies.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 100,
+    "sourcing": "Donated by XYZ Company"
+  },
+  {
+    "name": "Water Bottle",
+    "price": 10,
+    "description": "Reusable water bottle for staying hydrated.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 150,
+    "sourcing": "Sourced from ABC Manufacturer"
+  },
+  {
+    "name": "Solar-Powered Lantern",
+    "price": 20,
+    "description": "Eco-friendly lantern for lighting up homes.",
+    "categories": ["Energy"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 80,
+    "sourcing": "Donated by DEF Corporation"
+  },
+  {
+    "name": "Mosquito Net",
+    "price": 15,
+    "description": "Protective net to prevent mosquito bites.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 120,
+    "sourcing": "Sourced from GHI Supplier"
+  },
+  {
+    "name": "Children's Books",
+    "price": 30,
+    "description": "Set of educational books for children.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 90,
+    "sourcing": "Donated by JKL Publishers"
+  },
+  {
+    "name": "First Aid Kit",
+    "price": 15,
+    "description": "Compact first aid kit for emergency medical needs.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 100,
+    "sourcing": "Sourced from MNO Medical Supplies"
+  },
+  {
+    "name": "Portable Water Filter",
+    "price": 35,
+    "description": "Portable water filter for safe drinking water.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 75,
+    "sourcing": "Donated by PQR Outdoor Gear"
+  },
+  {
+    "name": "Educational Tablet",
+    "price": 50,
+    "description": "Tablet preloaded with educational apps for learning.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 60,
+    "sourcing": "Sourced from STU Electronics"
+  },
+  {
+    "name": "Nutritional Supplements",
+    "price": 40,
+    "description": "Vitamin and mineral supplements for children's health.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 130,
+    "sourcing": "Donated by VWX Nutrition"
+  },
+  {
+    "name": "School Uniform",
+    "price": 20,
+    "description": "Durable and comfortable school uniform for children.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 110,
+    "sourcing": "Sourced from YZA Clothing Co."
+  },
+  {
+    "name": "Mathematics Learning Kit",
+    "price": 25,
+    "description": "Interactive kit to help children learn mathematics.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 100,
+    "sourcing": "Donated by ABC Educational Supplies"
+  },
+  {
+    "name": "Reusable Lunch Box",
+    "price": 15,
+    "description": "Eco-friendly lunch box for carrying meals.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 120,
+    "sourcing": "Sourced from DEF Kitchenware"
+  },
+  {
+    "name": "Drawing and Coloring Set",
+    "price": 20,
+    "description": "Set of drawing and coloring materials for creativity.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 90,
+    "sourcing": "Donated by GHI Art Supplies"
+  },
+  {
+    "name": "Hygiene Kit",
+    "price": 18,
+    "description": "Kit containing essential hygiene products for children.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 130,
+    "sourcing": "Sourced from JKL Personal Care"
+  },
+  {
+    "name": "Reading Glasses",
+    "price": 12,
+    "description": "Durable reading glasses to aid vision for studying.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 110,
+    "sourcing": "Donated by MNO Eyewear"
+  },
+  {
+    "name": "Science Experiment Kit",
+    "price": 30,
+    "description": "Kit for conducting simple science experiments at home.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 85,
+    "sourcing": "Sourced from PQR Educational Toys"
+  },
+  {
+    "name": "Raincoat",
+    "price": 18,
+    "description": "Durable and waterproof raincoat for children.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 120,
+    "sourcing": "Donated by STU Clothing Brand"
+  },
+  {
+    "name": "Fruit Tree Sapling",
+    "price": 10,
+    "description": "Sapling of a fruit tree to provide food and shade.",
+    "categories": ["Environment"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 150,
+    "sourcing": "Sourced from VWX Nursery"
+  },
+  {
+    "name": "Solar-Powered Radio",
+    "price": 25,
+    "description": "Eco-friendly radio powered by solar energy.",
+    "categories": ["Energy"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 70,
+    "sourcing": "Donated by YZA Electronics"
+  },
+  {
+    "name": "Handcrafted Toy",
+    "price": 15,
+    "description": "Locally handcrafted toy to support artisan communities.",
+    "categories": ["Culture"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 100,
+    "sourcing": "Sourced from ABC Artisans"
+  },
+  {
+    "name": "Sports Equipment Set",
+    "price": 30,
+    "description": "Set of basic sports equipment for physical activities.",
+    "categories": ["Recreation"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 100,
+    "sourcing": "Donated by PQRS Sports Goods"
+  },
+  {
+    "name": "Art and Craft Supplies",
+    "price": 22,
+    "description": "Assorted supplies for art and craft activities.",
+    "categories": ["Education"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 80,
+    "sourcing": "Sourced from TUV Art Store"
+  },
+  {
+    "name": "Basic Tool Kit",
+    "price": 18,
+    "description": "Tool kit with essential tools for simple repairs.",
+    "categories": ["Vocational"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 70,
+    "sourcing": "Donated by WXYZ Hardware"
+  },
+  {
+    "name": "Rain Gear Set",
+    "price": 20,
+    "description": "Set including a raincoat and umbrella for rainy days.",
+    "categories": ["Health"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 90,
+    "sourcing": "Sourced from ABCD Weatherwear"
+  },
+  {
+    "name": "Gardening Kit",
+    "price": 25,
+    "description": "Kit with tools and seeds for starting a small garden.",
+    "categories": ["Agriculture"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 60,
+    "sourcing": "Donated by EFGH Gardening Supplies"
+  },
+  {
+    "name": "Nutritious Meal Kit",
+    "price": 15,
+    "description": "A kit containing ingredients for a balanced meal.",
+    "categories": ["Food"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 100,
+    "sourcing": "Sourced from ABC Nutrition"
+  },
+  {
+    "name": "Dried Fruits Pack",
+    "price": 10,
+    "description": "A variety pack of healthy and delicious dried fruits.",
+    "categories": ["Food"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 120,
+    "sourcing": "Donated by DEF Orchards"
+  },
+  {
+    "name": "High-Energy Biscuits",
+    "price": 8,
+    "description": "Biscuits enriched with vitamins and minerals for energy.",
+    "categories": ["Food"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 150,
+    "sourcing": "Sourced from GHI Bakery"
+  },
+  {
+    "name": "Protein Bars",
+    "price": 12,
+    "description": "Nutritious protein bars for a quick and healthy snack.",
+    "categories": ["Food"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 130,
+    "sourcing": "Donated by JKL Health Foods"
+  },
+  {
+    "name": "Fortified Cereal",
+    "price": 14,
+    "description": "Cereal fortified with essential vitamins and minerals.",
+    "categories": ["Food"],
+    "imagesUrl": ["https://picsum.photos/200"],
+    "stock": 110,
+    "sourcing": "Sourced from MNO Grains"
+  }
+]

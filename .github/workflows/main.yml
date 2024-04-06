@@ -11,6 +11,6 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v4
     - name: Install the npm dependencies
-      uses: npm install
+      run: npm install
     - name: Build project assets
-      uses: npm run build
+      run: npm run build
