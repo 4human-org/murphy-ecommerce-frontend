@@ -32,7 +32,7 @@ export default function ProductTileGrid() {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 gap-4 pb-10 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-6 xl:gap-5">
+    <div className="grid grid-cols-1 gap-4 pb-10 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 xl:gap-5">
       {isLoading
         ? Array.from({ length: 12 }).map((_, index) => (
             <ProductTileSkeleton key={index} />
@@ -43,8 +43,7 @@ export default function ProductTileGrid() {
               productName={name}
               price={price}
               imageURL={imagesUrl[0]}
-            id={id}
-            
+              id={id}
             />
           ))}
     </div>
