@@ -9,7 +9,7 @@ export default function ResultsContent() {
   const [query, setQuery] = useState("");
   // Sets current page to inital searchParams, default value is 1
   const [currentPage, setCurrentPage] = useState(
-    Number(searchParams.get("page"))
+    Number(searchParams.get("page")),
   );
 
   // UseEffect to handle inital state of query based on searchParams

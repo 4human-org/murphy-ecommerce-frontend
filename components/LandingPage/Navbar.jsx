@@ -1,25 +1,29 @@
 "use client";
 
 import { AlignJustify, ShoppingCart, User } from "lucide-react";
-import { Button } from "./ui/Button";
 import NavLogo from "./NavLogo";
 import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "/components/ui/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/UIcomponents/Avatar";
+import Button from "../UIcomponents/Button";
 import Link from "next/link";
 
 // A Next.Js component for the navbar:
 
 export default function Navbar() {
   return (
-    <div className="py-2 border">
+    <div className="border py-2">
       <div className="container flex items-center justify-between">
         <NavLogo />
 
-        <div className="flex justify-evenly items-center">
+        <div className="flex items-center justify-evenly">
           <AvatarButton />
 
           <CartButton />
-          <Button variant="ghost" size="icon" className="md:hidden ml-8">
+          <Button variant="ghost" size="icon" className="ml-8 md:hidden">
             <AlignJustify />
           </Button>
         </div>

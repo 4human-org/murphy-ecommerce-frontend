@@ -41,19 +41,19 @@ export default function QuantityButton({
     <div className="custom-number-input w-fit ">
       <label
         htmlFor="custom-input-number"
-        className="w-full text-gray-700 text-sm font-semibold"
+        className="w-full text-sm font-semibold text-gray-700"
       ></label>
-      <div className="flex flex-row h-10 w-full rounded relative bg-transparent mt-1 border">
+      <div className="relative mt-1 flex h-10 w-full flex-row rounded border bg-transparent">
         <button
           onClick={handleDecrement}
-          className="flex justify-center items-center max-w-8 bg-murphy-bg-salmon text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+          className="bg-murphy-bg-salmon flex h-full w-20 max-w-8 cursor-pointer items-center justify-center rounded-l text-gray-600 outline-none hover:bg-gray-400 hover:text-gray-700"
         >
           <span className="m-auto text-2xl font-thin">-</span>
         </button>
         <div className="flex">
           <div
             id="custom-input-number"
-            className="flex justify-evenly w-8 h-full outline-none focus:outline-none text-center bg-murphy-bg-salmon font-medium text-md hover:text-black focus:text-black md:text-base cursor-default items-center text-gray-700"
+            className="bg-murphy-bg-salmon text-md flex h-full w-8 cursor-default items-center justify-evenly text-center font-medium text-gray-700 outline-none hover:text-black focus:text-black focus:outline-none md:text-base"
             name="custom-input-number"
           >
             {number}
@@ -61,7 +61,7 @@ export default function QuantityButton({
         </div>
         <button
           onClick={handleIncrement}
-          className="flex justify-center items-center max-w-8 bg-murphy-bg-salmon text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+          className="bg-murphy-bg-salmon flex h-full w-20 max-w-8 cursor-pointer items-center justify-center rounded-r text-gray-600 hover:bg-gray-400 hover:text-gray-700"
         >
           <span className="m-auto text-2xl font-thin">+</span>
         </button>

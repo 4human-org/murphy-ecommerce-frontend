@@ -6,7 +6,7 @@ import QuantityButton from "../QuantityButton.jsx";
 
 function handleRemove(productId, setCheckoutList) {
   setCheckoutList((prevCheckoutList) =>
-    prevCheckoutList.filter((item) => item.productId !== productId)
+    prevCheckoutList.filter((item) => item.productId !== productId),
   );
 }
 
@@ -22,31 +22,31 @@ export default function CartItem({ product, setCheckoutList }) {
   }, [productQuantity]);
 
   return (
-    <div className="flex max-h-36 text-sm font-medium text-neutral-900 mx-2 my-1 rounded-2xl hover:bg-gray-50">
+    <div className="mx-2 my-1 flex max-h-36 rounded-2xl text-sm font-medium text-neutral-900 hover:bg-gray-50">
       <img
         src={
           imageURL
             ? imageURL
             : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"
         }
-        className="h-auto w-36 object-cover object-center p-2.5 rounded-2xl "
+        className="h-auto w-36 rounded-2xl object-cover object-center p-2.5 "
       />
-      <div className="flex flex-col grow p-4 justify-center">
+      <div className="flex grow flex-col justify-center p-4">
         <div className="flex justify-between">
           <h3 className="text-base font-semibold">{title}</h3>
-          <span className="font-semibold flex items-center">${cost}</span>
+          <span className="flex items-center font-semibold">${cost}</span>
         </div>
         <span>
           <span className="text-gray-500">Color</span> {placeHolderColor}
         </span>
-        <div className="sm:flex items-center">
+        <div className="items-center sm:flex">
           <QuantityButton
             productId={productId}
             setCheckoutList={setCheckoutList}
             setProductQuantity={setProductQuantity}
           />
           <button
-            className="inline text-red-700 px-2"
+            className="inline px-2 text-red-700"
             onClick={() => handleRemove(productId, setCheckoutList)}
           >
             Remove

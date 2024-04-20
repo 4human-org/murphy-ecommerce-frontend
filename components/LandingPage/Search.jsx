@@ -1,5 +1,5 @@
 "use client";
-import SearchDropdown from "@/components/ResultsPage/SearchDropdown";
+import SearchDropdown from "../ResultsPage/SearchDropdown";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react"; // Import useState hook
 
@@ -23,7 +23,7 @@ export default function Search({ placeholder }) {
   };
 
   return (
-    <div className="relative flex-col flex-1 self-center mb-3 w-3/4">
+    <div className="relative mb-3 w-3/4 flex-1 flex-col self-center">
       <form onSubmit={handleSearch}>
         {/* Use form onSubmit instead of input onSubmit */}
         <div className="relative flex  flex-1 flex-shrink-0">

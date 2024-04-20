@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { ProductTile, ProductTileSkeleton } from "./ProductTile.jsx";
 
