@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import product_data from './search_bar_data/MOCK_DATA.json';
-import product_image from './search_bar_data/product_image_example.jpg';
-import { formatCurrency } from '../../lib/utils';
+import product_data from "./search_bar_data/MOCK_DATA.json";
+import product_image from "./search_bar_data/product_image_example.jpg";
+import { formatCurrency } from "../../lib/utils";
 
 export default function Products({ query, currentPage }) {
   // Function to filter out given products from dummy_data
@@ -25,7 +25,7 @@ export default function Products({ query, currentPage }) {
     // Apply pagination (slice the filtered products based on offset and items per page)
     const paginatedProducts = filteredProducts.slice(
       offset,
-      offset + ITEMS_PER_PAGE
+      offset + ITEMS_PER_PAGE,
     );
 
     // Return the filtered and paginated products
@@ -33,22 +33,22 @@ export default function Products({ query, currentPage }) {
   };
 
   return (
-    <div className='bg-white grid grid-cols-3 gap-5 pt-4 h-1/2'>
+    <div className="grid h-1/2 grid-cols-3 gap-5 bg-white pt-4">
       {fetchFilteredProducts(query, currentPage)?.map((product, i) => (
-        <div key={i} className=''>
-          <div className='py-3 pr-3'>
-            <div className='flex'>
+        <div key={i} className="">
+          <div className="py-3 pr-3">
+            <div className="flex">
               <img
                 src={product_image.src}
-                className='rounded'
+                className="rounded"
                 width={128}
                 alt={`${product.product_name}'s profile picture`}
               />
-              <div className='ps-2'>
-                <p className='capitalize text-lg text-nowrap'>
+              <div className="ps-2">
+                <p className="text-nowrap text-lg capitalize">
                   {product.product_name}
                 </p>
-                <div className='pt-2 text-lg'>
+                <div className="pt-2 text-lg">
                   {formatCurrency(product.amount)}
                 </div>
               </div>

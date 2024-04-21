@@ -1,6 +1,6 @@
 "use client";
 
-import CheckoutButton from "./CheckOutButton.jsx";
+import CheckoutButton from "./CheckoutButton.jsx";
 
 export default function OrderSummary({ checkoutList, checkoutPrice }) {
   const discount = 31.9;
@@ -10,8 +10,8 @@ export default function OrderSummary({ checkoutList, checkoutPrice }) {
       : (checkoutPrice - discount).toFixed(2);
 
   return (
-    <section className="flex flex-col text-sm p-8 rounded-xl bg-murphy-bg-salmon min-w-[300px] h-max border-2 border-bg-gray-400 gap-8 ">
-      <div className="flex font-medium text-xl">
+    <section className="bg-murphy-bg-salmon border-bg-gray-400 flex h-max min-w-[300px] flex-col gap-8 rounded-xl border-2 p-8 text-sm ">
+      <div className="flex text-xl font-medium">
         <h2>Order Summary</h2>
       </div>
       <div className="flex justify-between">

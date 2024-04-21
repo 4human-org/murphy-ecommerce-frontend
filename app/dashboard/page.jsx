@@ -1,7 +1,7 @@
-import RecentDonations from "@/components/UserDashboard/RecentDonations"
+"use client";
 
-export default function Page(){
-    return (
-        <RecentDonations />
-    )
+import RecentDonations from "@/components/UserDashboard/RecentDonations";
+
+export default function Page() {
+  return <RecentDonations />;
 }

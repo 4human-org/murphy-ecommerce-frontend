@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import product_data from './search_bar_data/MOCK_DATA.json';
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from "react";
+import product_data from "./search_bar_data/MOCK_DATA.json";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 const SearchDropdown = ({ query, isFocused, setIsFocused }) => {
   const [suggestions, setSuggestions] = useState([]);
@@ -13,20 +13,20 @@ const SearchDropdown = ({ query, isFocused, setIsFocused }) => {
     const params = new URLSearchParams(searchParams);
 
     // By default, set params to page=1
-    params.set('page', '1');
+    params.set("page", "1");
 
     // If user input exists, update the query with the term.
     if (term) {
-      params.set('query', term);
+      params.set("query", term);
     } else {
-      params.delete('query');
+      params.delete("query");
     }
     router.push(`/results?${params.toString()}`);
     setIsFocused(false);
   };
 
   useEffect(() => {
-    if (query == '') {
+    if (query == "") {
       setSuggestions(product_data);
     }
 
@@ -37,7 +37,7 @@ const SearchDropdown = ({ query, isFocused, setIsFocused }) => {
             product.product_name.toLowerCase().includes(query.toLowerCase()) &&
             product.product_name != query
           );
-        })
+        }),
       );
     }
   }, [query]);
@@ -50,10 +50,10 @@ const SearchDropdown = ({ query, isFocused, setIsFocused }) => {
           <li
             onBlur={() => setIsFocused(false)}
             key={i}
-            className='relative  pl-2 pb-1 cursor-pointer hover:bg-gray-600/20 rounded '
+            className="relative  cursor-pointer rounded pb-1 pl-2 hover:bg-gray-600/20 "
           >
             <button
-              className='w-full text-left'
+              className="w-full text-left"
               onClick={() => handleSuggestionClick(suggestion.product_name)}
             >
               {suggestion.product_name}
@@ -65,7 +65,7 @@ const SearchDropdown = ({ query, isFocused, setIsFocused }) => {
   }
 
   return (
-    <ul className='absolute min-h-1 pl-8 pr-8 pt-2 pb-1 bg-white flex flex-col rounded flex-1 w-full'>
+    <ul className="absolute flex min-h-1 w-full flex-1 flex-col rounded bg-white pb-1 pl-8 pr-8 pt-2">
       {renderQuery()}
     </ul>
   );

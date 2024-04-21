@@ -8,8 +8,8 @@ export default function ProfilePage() {
     <div>
       <h1>Profile</h1>
       {user ? (
-        <button className="p-4 bg-blue-900" onClick={signOut}>
-          <div className="p-4 bg-blue-900">Logout</div>
+        <button className="bg-blue-900 p-4" onClick={signOut}>
+          <div className="bg-blue-900 p-4">Logout</div>
         </button>
       ) : (
         <p>Not logged in.</p>

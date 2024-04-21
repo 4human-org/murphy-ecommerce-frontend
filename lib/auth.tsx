@@ -16,11 +16,11 @@ import { auth } from "./firebase";
 export async function signIn(
   email: string,
   password: string,
-  rememberMe: boolean = false
+  rememberMe: boolean = false,
 ) {
   await setPersistence(
     auth,
-    rememberMe ? browserLocalPersistence : browserSessionPersistence
+    rememberMe ? browserLocalPersistence : browserSessionPersistence,
   );
   return signInWithEmailAndPassword(auth, email, password);
 }

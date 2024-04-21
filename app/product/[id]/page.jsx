@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import ImageSwapper from '../../../components/ProductPage/ImageSwapper';
-import ErrorPage from 'next/error';
-import ProductInformation from '../../../components/ProductPage/ProductInformation';
-import { fetchProductById } from '@/utils/FetchProductById';
+import { useEffect, useState } from "react";
+import ImageSwapper from "../../../components/ProductPage/ImageSwapper";
+import ErrorPage from "next/error";
+import ProductInformation from "../../../components/ProductPage/ProductInformation";
+import { fetchProductById } from "@/utils/FetchProductById";
 
 // Example product with image array for image swapper component
 const exampleProduct = {
   productId: 2,
-  productName: 'Example Product',
+  productName: "Example Product",
   price: 24.99,
   productImages: [
-    'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
-    'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
+    "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg",
+    "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg",
   ],
 };
 
@@ -36,7 +36,7 @@ export default function Page({ params }) {
         // stores error in useState
         setError({
           statusCode: 404,
-          message: error.message || 'Product not found.',
+          message: error.message || "Product not found.",
         });
       }
     };
@@ -49,13 +49,11 @@ export default function Page({ params }) {
   }
 
   return (
-    <div className='flex mx-16 px-2 justify-center align-center mt-4'>
-      <div className='basis-1/3'>
-        {product && !error && (
-          <ImageSwapper images={product.productImages} />
-        )}
+    <div className="align-center mx-16 mt-4 flex justify-center px-2">
+      <div className="basis-1/3">
+        {product && !error && <ImageSwapper images={product.productImages} />}
       </div>
-      <div className='basis-1/3'>
+      <div className="basis-1/3">
         {product && !error && (
           <ProductInformation productInformation={product} />
         )}

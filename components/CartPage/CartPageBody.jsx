@@ -11,7 +11,7 @@ export default function CartPageBody({
   checkoutList,
 }) {
   const [checkoutPrice, setCheckoutPrice] = useState(
-    getOrderSummaryPrice(checkoutList).toFixed(2)
+    getOrderSummaryPrice(checkoutList).toFixed(2),
   );
 
   useEffect(() => {
@@ -19,15 +19,15 @@ export default function CartPageBody({
   }, [checkoutList]);
 
   return (
-    <div className="md:flex container">
-      <div className="md:grow md:mr-2 xl:mr-6">
-        <h2 className="text-sm font-medium text-neutral-900 mb-3">
+    <div className="container md:flex">
+      <div className="md:mr-2 md:grow xl:mr-6">
+        <h2 className="mb-3 text-sm font-medium text-neutral-900">
           <span className="mx-4 text-2xl">Cart</span>
           <span className="text-gray-500">
             {cartItemAmount} {itemText}
           </span>
         </h2>
-        <section className="flex flex-col mb-12">{products}</section>
+        <section className="mb-12 flex flex-col">{products}</section>
       </div>
       <div className="sticky top-0">
         <OrderSummary

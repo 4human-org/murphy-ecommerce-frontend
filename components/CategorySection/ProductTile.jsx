@@ -1,6 +1,6 @@
 "use client";
 
-import Skeleton from "@/components/ui/skeleton";
+import Skeleton from "@/components/UIcomponents/Skeleton";
 
 function ProductTile({ productName, price, imageURL, id }) {
   const cost = price?.toFixed(2);
