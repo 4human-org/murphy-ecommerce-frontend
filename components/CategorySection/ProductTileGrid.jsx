@@ -33,13 +33,15 @@ export default function ProductTileGrid() {
     fetchData();
   }, []);
 
+  const displayedProducts = isLoading ? [] : products.slice(0, 8);
+
   return (
     <div className="grid grid-cols-1 gap-4 pb-10 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 xl:gap-5">
       {isLoading
-        ? Array.from({ length: 12 }).map((_, index) => (
+        ? Array.from({ length: 8 }).map((_, index) => (
             <ProductTileSkeleton key={index} />
           ))
-        : products.map(({ name, price, imagesUrl, id }) => (
+        : displayedProducts.map(({ name, price, imagesUrl, id }) => (
             <ProductTile
               key={name}
               productName={name}

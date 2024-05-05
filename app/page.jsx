@@ -9,6 +9,14 @@ export default function Page() {
       <Suspense>
         <Search placeholder="Search products..." />
       </Suspense>
+      <CategorySection sectionHeader="Health" />
+      <CategorySection sectionHeader="Education" />
+      <CategorySection sectionHeader="Culture" />
+      <CategorySection sectionHeader="Environment" />
+      <CategorySection sectionHeader="Agriculture" />
+      <CategorySection sectionHeader="Energy" />
+      <CategorySection sectionHeader="Recreation" />
+      <CategorySection sectionHeader="Vocational" />
       <CategorySection sectionHeader="Recommended Items" />
       <CategorySection sectionHeader="Popular Items" />
     </main>
