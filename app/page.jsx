@@ -1,6 +1,6 @@
 "use client";
 import Search from "../components/LandingPage/Search";
-import CategorySection from "../components/CategorySection/CategorySection";
+import AllCategories from "../components/CategorySection/AllCategories";
 import { Suspense } from "react";
 
 export default function Page() {
@@ -9,16 +9,7 @@ export default function Page() {
       <Suspense>
         <Search placeholder="Search products..." />
       </Suspense>
-      <CategorySection sectionHeader="Health" />
-      <CategorySection sectionHeader="Education" />
-      <CategorySection sectionHeader="Culture" />
-      <CategorySection sectionHeader="Environment" />
-      <CategorySection sectionHeader="Agriculture" />
-      <CategorySection sectionHeader="Energy" />
-      <CategorySection sectionHeader="Recreation" />
-      <CategorySection sectionHeader="Vocational" />
-      <CategorySection sectionHeader="Recommended Items" />
-      <CategorySection sectionHeader="Popular Items" />
+      <AllCategories />
     </main>
   );
 }
