@@ -32,7 +32,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/LandingPage/CategoryLinks.jsx", "components/UIcomponents/NavigationMenu.jsx"  ],
   "exclude": [
     "node_modules"
   ]
