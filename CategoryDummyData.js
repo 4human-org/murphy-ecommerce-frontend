@@ -2,6 +2,20 @@
 const categories = [
   {
     category: {
+      title: "Recommended Items",
+      description:
+        "Curated list of items or projects that align with the charity's mission and impact goals.",
+    },
+  },
+  {
+    category: {
+      title: "Popular Items",
+      description:
+        "Items or projects that have garnered significant support and impact within the community.",
+    },
+  },
+  {
+    category: {
       title: "Health",
       description:
         "Support initiatives that improve healthcare access, promote wellness, and advance medical research.",
@@ -54,20 +68,6 @@ const categories = [
       title: "Vocational",
       description:
         "Support vocational training and employment opportunities for skill development and economic empowerment.",
-    },
-  },
-  {
-    category: {
-      title: "Recommended Items",
-      description:
-        "Curated list of items or projects that align with the charity's mission and impact goals.",
-    },
-  },
-  {
-    category: {
-      title: "Popular Items",
-      description:
-        "Items or projects that have garnered significant support and impact within the community.",
     },
   },
 ];

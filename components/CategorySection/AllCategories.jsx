@@ -6,8 +6,9 @@ export default function AllCategories() {
   const categories = CategoryDummyData;
   const allCategories = categories.map((item) => (
     <CategorySection
+      key={item.category.title}
       categoryHeader={item.category.title}
-      categoryDecription={item.category.description}
+      categoryDescription={item.category.description}
     ></CategorySection>
   ));
   return allCategories;
