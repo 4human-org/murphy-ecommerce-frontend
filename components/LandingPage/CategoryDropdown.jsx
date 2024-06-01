@@ -9,43 +9,62 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../UIcomponents/Dropdown";
+import { AlignJustify } from "lucide-react";
 
 export default function CategoryDropdown() {
   return (
-    <div className="p-4 text-xl">
-      <DropdownMenu>
-        <DropdownMenuTrigger className="rounded bg-gradient-to-t from-blue-400 to-blue-100 p-2">
-          Categories to Support
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel className="p-2">Categories</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/health">Health</a>
+    <DropdownMenu>
+      <DropdownMenuTrigger className="ml-8 rounded-full p-2">
+        <AlignJustify />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="z-50 m-auto mr-[5vw] mt-[5vh] flex w-screen max-w-[500px] flex-wrap justify-center border-none bg-gradient-to-t from-blue-300 via-blue-400 via-5% to-green-400 p-0 pb-4 pt-4">
+        <DropdownMenuLabel className="mb-2 w-full p-2 pt-8 text-center text-[2rem]">
+          <span className="rounded bg-slate-200 p-4 text-[2rem] shadow-xl">
+            Categories
+          </span>
+        </DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <a className="" href="/category/health">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg ">
+            Health
           </DropdownMenuItem>
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/education">Education</a>
+        </a>
+        <a className="" href="/category/education">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg ">
+            Education
           </DropdownMenuItem>
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/culture">Culture</a>
+        </a>
+        <a className="" href="/category/culture">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg">
+            Culture
           </DropdownMenuItem>
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/environment">Environment</a>
+        </a>
+        <a className="" href="/category/environment">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg">
+            Environment
           </DropdownMenuItem>
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/agriculture">Agriculture</a>
+        </a>
+        <a className="" href="/category/agriculture">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg">
+            Agriculture
           </DropdownMenuItem>
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/energy">Energy</a>
+        </a>
+        <a className="" href="/category/energy">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg">
+            Energy
           </DropdownMenuItem>
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/recreation">Recreation</a>
+        </a>
+        <a className="" href="/category/recreation">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg">
+            Recreation
           </DropdownMenuItem>
-          <DropdownMenuItem className="bg-blue-100 p-2">
-            <a href="/category/vocational">Vocational</a>
+        </a>
+        <a className="" href="/category/vocational">
+          <DropdownMenuItem className="m-2 transform justify-center rounded bg-slate-100 p-4 text-center text-[1.5rem] shadow transition duration-100 ease-in-out hover:scale-105 hover:cursor-pointer hover:bg-green-300 hover:shadow-lg">
+            Vocational
           </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
+        </a>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

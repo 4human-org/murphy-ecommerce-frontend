@@ -10,23 +10,18 @@ import {
 } from "../../components/UIcomponents/Avatar";
 import Button from "../UIcomponents/Button";
 import Link from "next/link";
-import NavLinks from "./NavLinks";
-
-// A Next.Js component for the navbar:
+import CategoryDropdown from "../LandingPage/CategoryDropdown";
 
 export default function Navbar() {
   return (
-    <div className="border py-2">
-      <div className="container flex items-center justify-between">
+    <div className="fixed top-0 z-10 w-screen">
+      <div className="container absolute top-0 z-20 flex max-w-[100%] items-center justify-between border bg-white py-2">
         <NavLogo />
         <div className="flex flex-row">
-          <NavLinks />
           <div className="flex items-center justify-evenly">
             <AvatarButton />
             <CartButton />
-            <Button variant="ghost" size="icon" className="ml-8 md:hidden">
-              <AlignJustify />
-            </Button>
+            <CategoryDropdown />
           </div>
         </div>
       </div>
