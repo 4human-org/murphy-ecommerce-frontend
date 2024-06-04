@@ -3,7 +3,7 @@
 export default function Page() {
   return (
     <div className="flex flex-col">
-        donations page
+        Thi page will be used to monitor donations  
     </div>
   )
 }

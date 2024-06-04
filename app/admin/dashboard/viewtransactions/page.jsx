@@ -3,7 +3,7 @@
 export default function Page() {
   return (
     <div className="flex flex-col">
-        transactions page
+        this page will be used to query for specific transactions
     </div>
   )
 }

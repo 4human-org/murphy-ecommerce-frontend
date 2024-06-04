@@ -3,7 +3,7 @@
 export default function Page() {
   return (
     <div className="flex flex-col">
-        manage users page
+        This page will be used to add/remove users.
     </div>
   )
 }

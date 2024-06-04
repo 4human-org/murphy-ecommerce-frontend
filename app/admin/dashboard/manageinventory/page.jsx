@@ -3,7 +3,7 @@
 export default function Page() {
   return (
     <div className="flex flex-col">
-        manage inventory page 
+        this page will be used to add/remove/update items. 
     </div>
   )
 }
