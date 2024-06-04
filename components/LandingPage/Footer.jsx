@@ -42,46 +42,46 @@ export default function Footer() {
           </Link>
         </ul>
         <ul className="flex flex-row place-content-center space-x-10 p-4">
-          <Link href="http://www.murphycharity.org/">
-            <li id="website">
+          <Link href="http://www.murphycharity.org/" target="_blank">
+            <li id="website" >
               {" "}
               <img className="h-6 rounded-full" src={imgUrl} />{" "}
             </li>
           </Link>
-          <Link href="https://instagram.com/murphycharity_?igshid=MTI1ZDU5ODQ3Yw==">
+          <Link href="https://instagram.com/murphycharity_?igshid=MTI1ZDU5ODQ3Yw==" target="_blank">
             <li id="instagram">
               {" "}
               <Instagram />{" "}
             </li>
           </Link>
-          <Link href="https://www.facebook.com/murphycharityuganda/">
+          <Link href="https://www.facebook.com/murphycharityuganda/" target="_blank">
             <li id="facebook">
               {" "}
               <Facebook />{" "}
             </li>
           </Link>
-          <Link href="https://www.linkedin.com/in/murphy-charitable-foundation-uganda-70948b255/">
+          <Link href="https://www.linkedin.com/in/murphy-charitable-foundation-uganda-70948b255/" target="_blank">
             <li id="linkedin_profile"> LinkedIn </li>
           </Link>
-          <Link href="https://www.linkedin.com/company/murphy-charitable-foundation-uganda/">
+          <Link href="https://www.linkedin.com/company/murphy-charitable-foundation-uganda/" target="_blank">
             <li id="linkedin_page">
               {" "}
               <Linkedin />{" "}
             </li>
           </Link>
-          <Link href="https://www.tiktok.com/@murphycharity_?_t=8dUTaiyws1a&_r=1">
+          <Link href="https://www.tiktok.com/@murphycharity_?_t=8dUTaiyws1a&_r=1" target="_blank">
             <li id="tiktok">
               {" "}
               <Music2 />{" "}
             </li>
           </Link>
-          <Link href="https://twitter.com/murphycharity">
+          <Link href="https://twitter.com/murphycharity" target="_blank">
             <li id="twitter">
               {" "}
               <Twitter />{" "}
             </li>
           </Link>
-          <Link href="https://www.youtube.com/@murphycharity">
+          <Link href="https://www.youtube.com/@murphycharity" target="_blank">
             <li id="youtube">
               {" "}
               <Youtube />{" "}
