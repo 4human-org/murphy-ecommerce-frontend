@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import limitString from "../../utils/LimitString.js";
+import { setCart } from "utils/cartFunctions.js";
 import QuantityButton from "../QuantityButton.jsx";
 
-function handleRemove(productId, setCheckoutList) {
-  setCheckoutList((prevCheckoutList) =>
-    prevCheckoutList.filter((item) => item.productId !== productId),
-  );
+function handleRemove(productId, productName, setCheckoutList) {
+  setCheckoutList((prevCheckoutList) => {
+    const newList = prevCheckoutList.filter((item) => item.productName !== productName) 
+    setCart(newList)
+    return newList
+  });
 }
 
 export default function CartItem({ product, setCheckoutList }) {
@@ -41,13 +44,14 @@ export default function CartItem({ product, setCheckoutList }) {
         </span>
         <div className="items-center sm:flex">
           <QuantityButton
+            productName={productName}
             productId={productId}
             setCheckoutList={setCheckoutList}
             setProductQuantity={setProductQuantity}
           />
           <button
             className="inline px-2 text-red-700"
-            onClick={() => handleRemove(productId, setCheckoutList)}
+            onClick={() => handleRemove(productId, productName, setCheckoutList)}
           >
             Remove
           </button>

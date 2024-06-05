@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { incrementWithProdName, decrementWithProdName, getQuantityWithProdNume } from "utils/cartFunctions.js";
 
 export default function QuantityButton({
+  productName,
   productId,
   setCheckoutList,
   setProductQuantity,
 }) {
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(getQuantityWithProdNume(productName));
 
   const handleIncrement = () => {
+    incrementWithProdName(productName)
     setNumber(number + 1);
     setProductQuantity((prev) => prev + 1);
     setCheckoutList((prevList) => {
@@ -24,6 +27,7 @@ export default function QuantityButton({
 
   const handleDecrement = () => {
     if (number > 1) {
+      decrementWithProdName(productName)
       setNumber(number - 1);
       setProductQuantity((prev) => prev - 1);
       setCheckoutList((prevList) => {

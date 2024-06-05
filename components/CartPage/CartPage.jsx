@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import DummyData from "../../utils/DummyData.js";
+import {getCart} from "../../utils/cartFunctions.js"
 import CartItem from "./CartItem.jsx";
 import CartPageBody from "./CartPageBody.jsx";
 import EmptyCart from "./EmptyCart.jsx";
 
 export default function CartPage() {
-  const [checkoutList, setCheckoutList] = useState(DummyData());
+
+  const [checkoutList, setCheckoutList] = useState(getCart());
   const [cartItemAmount, setCartItemAmount] = useState(checkoutList.length);
   const itemText = cartItemAmount > 1 ? "ITEMS" : "ITEM";
   const products = checkoutList.map((product) => (

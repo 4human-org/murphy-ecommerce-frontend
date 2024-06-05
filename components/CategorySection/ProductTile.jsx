@@ -1,6 +1,7 @@
 "use client";
 
 import Skeleton from "@/components/UIcomponents/Skeleton";
+import {addToCart} from "../../utils/cartFunctions"
 
 function ProductTile({ productName, price, imageURL, id }) {
   const cost = price?.toFixed(2);
@@ -23,7 +24,8 @@ function ProductTile({ productName, price, imageURL, id }) {
           <div className="text-sm font-medium text-neutral-900">${cost}</div>
         </div>
       </a>
-    </div>
+      <button onClick={() => addToCart(productName, price, imageURL, id)} className="text-center bg-green-200 w-full rounded-md p-1">Add to Cart</button>
+    </div>        
   );
 }
 
