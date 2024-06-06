@@ -9,10 +9,10 @@ export default function QuantityButton({
   setCheckoutList,
   setProductQuantity,
 }) {
-  const [number, setNumber] = useState(getQuantityWithProdNume(productName));
+  const [number, setNumber] = useState(getQuantityWithProdNume(productName)); // change to id when backend finished
 
   const handleIncrement = () => {
-    incrementWithProdName(productName)
+    incrementWithProdName(productName) // change to id when backend finished
     setNumber(number + 1);
     setProductQuantity((prev) => prev + 1);
     setCheckoutList((prevList) => {
@@ -26,22 +26,22 @@ export default function QuantityButton({
   };
 
   const handleDecrement = () => {
-    if (number >= 1) {
-      decrementWithProdName(productName)
-      setNumber(number - 1);
-      setProductQuantity((prev) => prev - 1);
-      setCheckoutList((prevList) => {
-        return prevList.map((item) => {
-          if (item.productName !== productName) { // change to productId when backend finished
-            return item;
-          } else {
-            return { ...item, quantity: item.quantity - 1 };
-          }
-        });
+    decrementWithProdName(productName) // change to id when backend finished
+    setNumber(number - 1);
+    setProductQuantity((prev) => prev - 1);
+    setCheckoutList((prevList) => {
+      let newList = prevList.map((item) => {
+        if (item.productName !== productName) { // change to productId when backend finished
+          return item;
+        } else {
+          return { ...item, quantity: item.quantity - 1 };
+        }
       });
-    } else {
 
-    }
+      newList = newList.filter(prod => prod.quantity > 0)
+      return newList
+    });
+    
   };
 
   return (

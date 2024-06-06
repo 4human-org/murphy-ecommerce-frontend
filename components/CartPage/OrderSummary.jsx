@@ -9,6 +9,7 @@ export default function OrderSummary({ checkoutList, checkoutPrice }) {
       ? "0.00"
       : (checkoutPrice - discount).toFixed(2);
 
+
   return (
     <section className="bg-murphy-bg-salmon border-bg-gray-400 flex h-max min-w-[300px] flex-col gap-8 rounded-xl border-2 p-8 text-sm ">
       <div className="flex text-xl font-medium">

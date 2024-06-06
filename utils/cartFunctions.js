@@ -1,17 +1,12 @@
 export const addToCart = (productName, price, imageURL, id) => {
-    console.log(`added ${productName} to cart`);
-
     const oldCart = JSON.parse(localStorage.getItem('cart')) || []
-    const hasItem = oldCart.some(item => item.productName === productName) 
+    const hasItem = oldCart.some(item => item.productName === productName) // change to id when backend finished
 
     let newCart = oldCart
     if (hasItem) {
-        console.log(`${productName} is already in the cart`)
         newCart.forEach(item => {
-            if (item.productName === productName) {
-                console.log(`old ${productName} quantity: ${item.quantity}`);
+            if (item.productName === productName) {   // change to id when backend finished
                 item.quantity += 1
-                console.log(`new ${productName} quantity: ${item.quantity}`);
             }
         })
     } else {
@@ -31,14 +26,18 @@ export const addToCart = (productName, price, imageURL, id) => {
 }
 
 export const getCart = () => {
-    return JSON.parse(localStorage.getItem('cart')) || []
+    if (!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', '[]')
+    }
+    const parsedCart = JSON.parse(localStorage.getItem('cart'))
+    return parsedCart
 }
 
 // designed to only work given that we know that cart is nonempty
-export const incrementWithProdName = (productName) => {
+export const incrementWithProdName = (productName) => { // change to id when backend finished
     const oldCart = JSON.parse(localStorage.getItem('cart'))
     oldCart.forEach(item => {
-        if (item.productName === productName) {
+        if (item.productName === productName) {// change to id when backend finished
             item.quantity += 1
         }
     })
@@ -46,22 +45,26 @@ export const incrementWithProdName = (productName) => {
 }
 
 // designed to only work given that we know that cart is nonempty
-export const decrementWithProdName = (productName) => {
-    const oldCart = JSON.parse(localStorage.getItem('cart'))
+export const decrementWithProdName = (productName) => { // change to id when backend finished
+    console.log('func called');
+    let oldCart = JSON.parse(localStorage.getItem('cart'))
+    console.log(oldCart);
     oldCart.forEach(item => {
-        if ((item.productName === productName) && (item.quantity >= 1)) {
+        if ((item.productName === productName) && (item.quantity >= 1)) {// change to id when backend finished
             item.quantity -= 1
         }
     })
-    localStorage.setItem('cart', JSON.stringify(oldCart))
-    console.log('finished setting decrement');
+
+    const newCart = oldCart.filter((product) => product.quantity > 0)
+    console.log(newCart);
+    localStorage.setItem('cart', JSON.stringify(newCart))
 }
 
-export const getQuantityWithProdNume = (productName) => {
+export const getQuantityWithProdNume = (productName) => {// change to id when backend finished
     const oldCart = JSON.parse(localStorage.getItem('cart'))
     let num
     oldCart.forEach(item => {
-        if (item.productName === productName) {
+        if (item.productName === productName) {// change to id when backend finished
             num = item.quantity
         }
     })
