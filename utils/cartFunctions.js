@@ -49,11 +49,12 @@ export const incrementWithProdName = (productName) => {
 export const decrementWithProdName = (productName) => {
     const oldCart = JSON.parse(localStorage.getItem('cart'))
     oldCart.forEach(item => {
-        if (item.productName === productName) {
+        if ((item.productName === productName) && (item.quantity >= 1)) {
             item.quantity -= 1
         }
     })
     localStorage.setItem('cart', JSON.stringify(oldCart))
+    console.log('finished setting decrement');
 }
 
 export const getQuantityWithProdNume = (productName) => {

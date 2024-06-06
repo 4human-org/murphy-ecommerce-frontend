@@ -17,7 +17,7 @@ export default function QuantityButton({
     setProductQuantity((prev) => prev + 1);
     setCheckoutList((prevList) => {
       return prevList.map((item) => {
-        if (item.productName === productName) { // change to id when backend finished
+        if (item.productName === productName) { // change to productId when backend finished
           return { ...item, quantity: item.quantity + 1 };
         }
         return item;
@@ -26,18 +26,21 @@ export default function QuantityButton({
   };
 
   const handleDecrement = () => {
-    if (number > 1) {
+    if (number >= 1) {
       decrementWithProdName(productName)
       setNumber(number - 1);
       setProductQuantity((prev) => prev - 1);
       setCheckoutList((prevList) => {
         return prevList.map((item) => {
-          if (item.productName === productName) { // // change to id when backend finished
+          if (item.productName !== productName) { // change to productId when backend finished
+            return item;
+          } else {
             return { ...item, quantity: item.quantity - 1 };
           }
-          return item;
         });
       });
+    } else {
+
     }
   };
 
