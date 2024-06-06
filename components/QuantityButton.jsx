@@ -17,7 +17,7 @@ export default function QuantityButton({
     setProductQuantity((prev) => prev + 1);
     setCheckoutList((prevList) => {
       return prevList.map((item) => {
-        if (item.productId === productId) {
+        if (item.productName === productName) { // change to id when backend finished
           return { ...item, quantity: item.quantity + 1 };
         }
         return item;
@@ -32,7 +32,7 @@ export default function QuantityButton({
       setProductQuantity((prev) => prev - 1);
       setCheckoutList((prevList) => {
         return prevList.map((item) => {
-          if (item.productId === productId) {
+          if (item.productName === productName) { // // change to id when backend finished
             return { ...item, quantity: item.quantity - 1 };
           }
           return item;
