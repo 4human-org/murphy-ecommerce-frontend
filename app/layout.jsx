@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={inter.className + "w-screen"}
+        className={inter.className + "w-screen pt-[82px]"} // padding for absolute navbar
         style={{ overflowX: "hidden" }}
       >
         <Navbar />
