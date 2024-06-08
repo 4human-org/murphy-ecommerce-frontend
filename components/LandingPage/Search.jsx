@@ -1,20 +1,20 @@
 "use client";
 import SearchDropdown from "../ResultsPage/SearchDropdown";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react"; // Import useState hook
+import { useEffect, useState } from "react";
 
 export default function Search({ placeholder }) {
-  const [searchTerm, setSearchTerm] = useState(""); // State to store search term
+  const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
 
   const handleSearch = (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     const params = new URLSearchParams(searchParams);
     params.set("page", "1");
     if (searchTerm) {
-      params.set("query", searchTerm); // Set search query in URL params
+      params.set("query", searchTerm);
     } else {
       params.delete("query");
     }
@@ -25,8 +25,15 @@ export default function Search({ placeholder }) {
   return (
     <div className="relative mb-3 w-3/4 flex-1 flex-col self-center">
       <form onSubmit={handleSearch}>
-        {/* Use form onSubmit instead of input onSubmit */}
-        <div className="relative flex  flex-1 flex-shrink-0">
+        <div
+          className="relative flex  flex-1 flex-shrink-0"
+          onFocus={() => {
+            setIsFocused(true);
+          }}
+          onBlur={() => {
+            setIsFocused(false);
+          }}
+        >
           <label htmlFor="search" className="sr-only">
             Search
           </label>
@@ -36,7 +43,7 @@ export default function Search({ placeholder }) {
             placeholder={placeholder}
             value={searchTerm}
             onClick={() => setIsFocused(true)}
-            onChange={(e) => setSearchTerm(e.target.value)} // Update searchTerm on input change
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
       </form>
