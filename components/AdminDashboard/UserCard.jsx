@@ -1,33 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
 
-function makeUserCard(user) {
-  console.log(user);
+export default function UserCard({ user }) {
+  const profileURL = "/profile/" + user.id;
   return (
-    <div>
-      {/* {user.firstName}
-      {user.lastName}
-      {user.email}
-      {user.isAdmin} */}
+    <div className="m-4 rounded-lg bg-slate-200 p-6 text-xl shadow-lg">
+      <p>
+        User: {user.firstName} {user.lastName}
+      </p>
+      <p>Email: {user.email}</p>
+      <p>Admin status: {user.isAdmin ? "admin" : "is not admin"}</p>
+      <p className="text-center">
+        <a href={profileURL}>
+          <button className="m-2 rounded bg-slate-100 p-2 text-center shadow">
+            Go to {user.firstName ? user.firstName + "'s" : "user's"} profile
+          </button>
+        </a>
+      </p>
     </div>
   );
-}
-
-export default function UserCard() {
-  const [allUsers, setAllUsers] = useState([null]);
-  useEffect(() => {
-    fetch("http://localhost:3030/users/")
-      .then((data) => data.json())
-      .then((userData) => {
-        Object.keys(userData).map((key) => [userData[key]]);
-        console.log(userData);
-        setAllUsers(userData);
-        const allUserData = [];
-        for (let i = 0; i < allUsers.length; i++) {
-          allUserData.push(makeUserCard(allUserData[i]));
-        }
-      });
-  }, []);
-  const allUserData = null;
-  return <div>{allUserData ? allUserData : null}</div>;
 }
