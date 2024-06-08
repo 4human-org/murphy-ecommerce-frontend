@@ -25,7 +25,7 @@ function ProductTile({ productName, price, imageURL, id }) {
         </div>
       </a>
       <div className="group relative">
-        <button onClick={() => addToCart(productName, price, imageURL, id)} className="text-center bg-green-300 w-full rounded-md p-1 group-hover:opacity-75 active:scale-95 transition-transform duration-75">Add to Cart</button>
+        <button onClick={() => addToCart(id)} className="text-center bg-green-300 w-full rounded-md p-1 group-hover:opacity-75 active:scale-95 transition-transform duration-75">Add to Cart</button>
       </div>
     </div>        
   );

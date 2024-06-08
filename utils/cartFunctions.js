@@ -1,28 +1,43 @@
-export const addToCart = (productName, price, imageURL, id) => {
+export const addToCart = async (id) => {
+    
     const oldCart = JSON.parse(localStorage.getItem('cart')) || []
-    const hasItem = oldCart.some(item => item.productName === productName) // change to id when backend finished
-
+    const hasItem = oldCart.some(item => item.productId === id) 
+    
     let newCart = oldCart
     if (hasItem) {
         newCart.forEach(item => {
-            if (item.productName === productName) {   // change to id when backend finished
+            if (item.productId === id) {  
                 item.quantity += 1
             }
         })
     } else {
+        const response = await fetch(`http://localhost:3030/products/${id}`);
+        if (!response.ok) throw new Error("Network response was not ok");
+        const data = await response.json();
+        
         newCart = [
             ...oldCart,
             {
-                productId: id,
-                productName: productName,
-                price: price,
-                imageURL: imageURL,
+                productId: data.id,
+                productName: data.name,
+                price: data.price,
+                imageURL: data.imagesUrl,
                 quantity: 1,
             }
         ]
     }
 
     localStorage.setItem('cart', JSON.stringify(newCart))
+}
+
+export const increment = (productId) => { 
+    const oldCart = JSON.parse(localStorage.getItem('cart'))
+    oldCart.forEach(item => {
+        if (item.productId === productId) {
+            item.quantity += 1
+        }
+    })
+    localStorage.setItem('cart', JSON.stringify(oldCart))
 }
 
 export const getCart = () => {
@@ -33,38 +48,26 @@ export const getCart = () => {
     return parsedCart
 }
 
-// designed to only work given that we know that cart is nonempty
-export const incrementWithProdName = (productName) => { // change to id when backend finished
-    const oldCart = JSON.parse(localStorage.getItem('cart'))
-    oldCart.forEach(item => {
-        if (item.productName === productName) {// change to id when backend finished
-            item.quantity += 1
-        }
-    })
-    localStorage.setItem('cart', JSON.stringify(oldCart))
-}
 
-// designed to only work given that we know that cart is nonempty
-export const decrementWithProdName = (productName) => { // change to id when backend finished
-    console.log('func called');
+
+
+export const decrement = (productId) => { 
     let oldCart = JSON.parse(localStorage.getItem('cart'))
-    console.log(oldCart);
     oldCart.forEach(item => {
-        if ((item.productName === productName) && (item.quantity >= 1)) {// change to id when backend finished
+        if ((item.productId === productId) && (item.quantity >= 1)) {
             item.quantity -= 1
         }
     })
 
     const newCart = oldCart.filter((product) => product.quantity > 0)
-    console.log(newCart);
     localStorage.setItem('cart', JSON.stringify(newCart))
 }
 
-export const getQuantityWithProdNume = (productName) => {// change to id when backend finished
+export const getQuantity = (productId) => {
     const oldCart = JSON.parse(localStorage.getItem('cart'))
     let num
     oldCart.forEach(item => {
-        if (item.productName === productName) {// change to id when backend finished
+        if (item.productId === productId) {
             num = item.quantity
         }
     })

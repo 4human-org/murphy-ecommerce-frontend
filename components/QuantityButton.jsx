@@ -1,23 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { incrementWithProdName, decrementWithProdName, getQuantityWithProdNume } from "utils/cartFunctions.js";
+import { increment, decrement, getQuantity } from "utils/cartFunctions.js";
 
 export default function QuantityButton({
-  productName,
   productId,
   setCheckoutList,
   setProductQuantity,
 }) {
-  const [number, setNumber] = useState(getQuantityWithProdNume(productName)); // change to id when backend finished
+  const [number, setNumber] = useState(getQuantity(productId)); 
 
   const handleIncrement = () => {
-    incrementWithProdName(productName) // change to id when backend finished
+    increment(productId) 
     setNumber(number + 1);
     setProductQuantity((prev) => prev + 1);
     setCheckoutList((prevList) => {
       return prevList.map((item) => {
-        if (item.productName === productName) { // change to productId when backend finished
+        if (item.productId === productId) { 
           return { ...item, quantity: item.quantity + 1 };
         }
         return item;
@@ -26,12 +25,13 @@ export default function QuantityButton({
   };
 
   const handleDecrement = () => {
-    decrementWithProdName(productName) // change to id when backend finished
+    decrement(productId) 
     setNumber(number - 1);
     setProductQuantity((prev) => prev - 1);
     setCheckoutList((prevList) => {
+      console.log("prevList: ", prevList);
       let newList = prevList.map((item) => {
-        if (item.productName !== productName) { // change to productId when backend finished
+        if (item.productId !== productId) { 
           return item;
         } else {
           return { ...item, quantity: item.quantity - 1 };
@@ -39,6 +39,7 @@ export default function QuantityButton({
       });
 
       newList = newList.filter(prod => prod.quantity > 0)
+      console.log("newList: ", newList);
       return newList
     });
     

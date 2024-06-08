@@ -10,17 +10,10 @@ export default function CartPage() {
   const [checkoutList, setCheckoutList] = useState(getCart());
   const [cartItemAmount, setCartItemAmount] = useState(checkoutList.length);
   const itemText = cartItemAmount > 1 ? "ITEMS" : "ITEM";
-  // const products = checkoutList.map((product) => (
-  //   <CartItem
-  //     key={product.productId}
-  //     product={product}
-  //     setCheckoutList={setCheckoutList}
-  //   />
-  // ));
 
   const products = checkoutList.map((product) => {
     return <CartItem
-      key={product.productName} // change to id when backend finished
+      key={product.productId}
       product={product}
       setCheckoutList={setCheckoutList}
     />

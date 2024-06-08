@@ -5,9 +5,9 @@ import limitString from "../../utils/LimitString.js";
 import { setCart } from "utils/cartFunctions.js";
 import QuantityButton from "../QuantityButton.jsx";
 
-function handleRemove(productId, productName, setCheckoutList) {
+function handleRemove(productId, setCheckoutList) {
   setCheckoutList((prevCheckoutList) => {
-    const newList = prevCheckoutList.filter((item) => item.productName !== productName)  // change to id when backend finished
+    const newList = prevCheckoutList.filter((item) => item.productId !== productId)  
     setCart(newList)
     return newList
   });
@@ -55,7 +55,7 @@ export default function CartItem({ product, setCheckoutList }) {
               />
               <button
                 className="inline px-2 text-red-700"
-                onClick={() => handleRemove(productId, productName, setCheckoutList)}
+                onClick={() => handleRemove(productId, setCheckoutList)}
               >
                 Remove
               </button>
