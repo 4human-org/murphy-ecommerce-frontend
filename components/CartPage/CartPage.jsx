@@ -7,7 +7,8 @@ import CartPageBody from "./CartPageBody.jsx";
 import EmptyCart from "./EmptyCart.jsx";
 
 export default function CartPage() {
-  const [checkoutList, setCheckoutList] = useState(getCart());
+  const [checkoutList, setCheckoutList] = useState([]);
+
   const [cartItemAmount, setCartItemAmount] = useState(checkoutList.length);
   const itemText = cartItemAmount > 1 ? "ITEMS" : "ITEM";
 
@@ -18,6 +19,11 @@ export default function CartPage() {
       setCheckoutList={setCheckoutList}
     />
   });
+
+  useEffect(() => {
+    const savedList = getCart()
+    setCheckoutList(savedList)
+  }, [])
 
   useEffect(() => {
     setCartItemAmount(checkoutList.length);
