@@ -26,7 +26,14 @@ export default function Search({ placeholder }) {
     <div className="relative mb-3 w-3/4 flex-1 flex-col self-center">
       <form onSubmit={handleSearch}>
         {/* Use form onSubmit instead of input onSubmit */}
-        <div className="relative flex  flex-1 flex-shrink-0">
+        <div className="relative flex  flex-1 flex-shrink-0"
+          onFocus={() => {
+            setIsFocused(true);
+          }}
+          onBlur={() => {
+            setIsFocused(false);
+          }}
+        >
           <label htmlFor="search" className="sr-only">
             Search
           </label>
