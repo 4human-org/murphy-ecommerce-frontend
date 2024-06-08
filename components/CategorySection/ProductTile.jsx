@@ -7,8 +7,8 @@ function ProductTile({ productName, price, imageURL, id }) {
   const cost = price?.toFixed(2);
 
   return (
-    <div className="group relative">
-      <a href={"/product/" + id}>
+    <div>
+      <a href={"/product/" + id} className="group relative">
         <div className="aspect-h-1 aspect-w-1 lg:aspect-none w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-56">
           <img
             src={
@@ -24,7 +24,9 @@ function ProductTile({ productName, price, imageURL, id }) {
           <div className="text-sm font-medium text-neutral-900">${cost}</div>
         </div>
       </a>
-      <button onClick={() => addToCart(productName, price, imageURL, id)} className="text-center bg-green-200 w-full rounded-md p-1">Add to Cart</button>
+      <div className="group relative">
+        <button onClick={() => addToCart(productName, price, imageURL, id)} className="text-center bg-green-300 w-full rounded-md p-1 group-hover:opacity-75 active:scale-95 transition-transform duration-75">Add to Cart</button>
+      </div>
     </div>        
   );
 }
