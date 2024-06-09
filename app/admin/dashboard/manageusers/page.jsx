@@ -1,9 +1,12 @@
 "use client";
-
+import AllUserCards from "../../../../components/AdminDashboard/AllUserCards";
+import AddUserForm from "../../../../components/AdminDashboard/AddUserForm";
 export default function Page() {
+  const style = "";
   return (
     <div className="flex flex-col">
-        This page will be used to add/remove users.
+      <AddUserForm />
+      <AllUserCards />
     </div>
-  )
+  );
 }
