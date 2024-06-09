@@ -12,6 +12,7 @@ const onstyling = 'rounded-md m-2 p-4 bg-blue-500 text-white transition-all dura
   
 export default function AddProductForm() {  
   const router = useRouter();
+
   const [productData, setProductData] = useState({
     categories: [],
     description: "",
@@ -21,16 +22,18 @@ export default function AddProductForm() {
     sourcing: "",
     stock: 0
   });
+
   
-  useEffect(() => {
-    console.log(productData);
-  }, [productData])
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+    let newValue = value;
+    if (type === "number") {
+      newValue = parseFloat(value);
+    }
     setProductData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
@@ -52,6 +55,9 @@ export default function AddProductForm() {
   // not done 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(productData);
+    
     try {
       const response = await fetch(`http://localhost:3030/products/`, {
         method: "POST",
@@ -134,7 +140,7 @@ export default function AddProductForm() {
           <input
             id="price"
             type="number"
-            placeholder="0"
+            placeholder={0}
             name="price"
             className="m-2 rounded bg-slate-200 p-2 shadow"
             value={productData.price}
@@ -146,7 +152,7 @@ export default function AddProductForm() {
           <input
             id="stock"
             type="number"
-            placeholder="0"
+            placeholder={0}
             name="stock"
             className="m-2 rounded bg-slate-200 p-2 shadow"
             value={productData.stock}
