@@ -3,13 +3,14 @@ import { useState, useEffect  } from "react";
 import { useRouter } from "next/navigation";
 import CategoryDummyData from "CategoryDummyData"
 
-const categoriesOptions = CategoryDummyData.filter(category => category.category.title !== "Recommended Items" && category.category.title != "Popular Items")
+const categoriesOptions = CategoryDummyData
+  .filter(category => category.category.title !== "Recommended Items" && category.category.title != "Popular Items")
+  .map(cat => cat.category.title)
+
 const offstlying = 'rounded-md m-2 p-4 bg-gray-300 transition-all duration-200' 
 const onstyling = 'rounded-md m-2 p-4 bg-blue-500 text-white transition-all duration-200'
-
-export default function AddProductForm() {
   
-  
+export default function AddProductForm() {  
   const router = useRouter();
   const [productData, setProductData] = useState({
     categories: [],
@@ -123,7 +124,7 @@ export default function AddProductForm() {
               className={productData.categories.includes(category) ? onstyling : offstlying}
               onClick={() => toggleCategory(category)}
             >
-                {category.category.title}
+                {category}
             </button>
             ))}
         </div>
