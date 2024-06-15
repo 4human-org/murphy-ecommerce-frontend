@@ -11,12 +11,30 @@ export default function ProductCard({ product }) {
     router.push("./" + itemUrl);
   }
 
+  const productUrlElements = product.imagesUrl.map((url) => {
+    return (
+      <div className="pl-6">
+        {url}
+      </div>
+    )
+  })
+
   return (
     <div className="m-4 rounded-lg bg-slate-200 p-6 text-xl shadow-lg w-full">
       <p><strong>Name:</strong> {product.name}</p>
       <p><strong>Description:</strong> {product.description}</p>
-      <p><strong>Categories:</strong> {product.categories.join(', ')}</p>
       <p><strong>Sourcing:</strong> {product.sourcing}</p>
+      <p><strong>Categories:</strong> {product.categories.join(', ')}</p>
+      <p>
+        {
+          productUrlElements.length !== 0 ? 
+          <>
+            <strong>Images:</strong>
+            {productUrlElements} 
+          </> : 
+          <p><strong>Images: </strong>None</p>
+        }
+      </p>
       <p><strong>Price:</strong> {product.price}</p>
       <p><strong>Stock:</strong> {product.stock}</p>
       <p className="text-center">

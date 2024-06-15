@@ -13,6 +13,7 @@ const onstyling = 'rounded-md m-2 p-4 bg-blue-500 text-white transition-all dura
 
 export default function Page() {
   const router = useRouter();
+  const [currImageUrl, setCurrImageUrl] = useState("")
   const [productData, setProductData] = useState({
     id: "",
     categories: [],
@@ -24,6 +25,50 @@ export default function Page() {
     stock: 0
   });
   const [modal, setModal] = useState(false);
+
+  const handleKeyPress = (e) => {
+    console.log('hm');
+    if (e.key === "Enter") {
+      console.log('asd');
+      e.preventDefault();
+      handleAddImageUrl();
+    }
+
+  };
+
+  const handleAddImageUrl = () => {
+    if (currImageUrl.trim() !== "") {
+      setProductData((prevData) => ({
+        ...prevData,
+        imagesUrl: [...prevData.imagesUrl, currImageUrl],
+      }));
+      setCurrImageUrl("");
+    }
+  };
+
+  const handleimagesUrlChange = (e) => {
+    setCurrImageUrl(e.target.value)
+  }
+
+  const removeUrl = (urlIndex) => {
+    setProductData((prevData) => ({
+      ...prevData,
+      imagesUrl: prevData.imagesUrl.filter((_, i) => i !== urlIndex) 
+    }))
+  }
+
+  const imagesUrlsElements = productData.imagesUrl.map((url, i) => {
+    return (
+      <div className="items-center flex justify-between rounded-md m-2 pt-3 pb-3 pl-5 pr-4 bg-gray-300" key={i}>
+        <p>{url}</p>
+        <button className="bg-red-300 pt-2 pb-2 pl-3 pr-3 rounded-md" type="button" onClick={() => removeUrl(i)}>
+          Remove
+        </button>
+      </div>
+    )
+  })
+
+
 
   useEffect(() => {
     const product = JSON.parse(localStorage.getItem("product"));
@@ -172,6 +217,20 @@ export default function Page() {
 
           </textarea>
         </div>
+        <div>
+            <label htmlFor="imagesUrl">imagesUrl:</label>
+            <input
+              id="imagesUrl"
+              value={currImageUrl}
+              placeholder="Enter image URL"
+              name="imagesUrl"
+              className="mt-2 rounded bg-slate-200 p-2 shadow w-full"
+              onChange={handleimagesUrlChange}
+              onKeyDown={handleKeyPress}
+            />
+            <button type="button" onClick={handleAddImageUrl} className="mt-2 mb-2 w-full rounded bg-blue-500 p-2 text-white">Add Image URL</button>
+            {imagesUrlsElements}
+          </div>
         <div>
           <label htmlFor="categories">Categories:</label>
           <div>
