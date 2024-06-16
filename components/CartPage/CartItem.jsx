@@ -46,7 +46,7 @@ export default function CartItem({ product, setCheckoutList }) {
             <span>
               <span className="text-gray-500">Color</span> {placeHolderColor}
             </span>
-            <div className="items-center sm:flex">
+            {/* <div className="items-center sm:flex">
               <QuantityButton
                 productName={productName}
                 productId={productId}
@@ -59,7 +59,7 @@ export default function CartItem({ product, setCheckoutList }) {
               >
                 Remove
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       }
