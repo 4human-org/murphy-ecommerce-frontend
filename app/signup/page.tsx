@@ -1,8 +1,11 @@
 "use client";
-export default function Signup() {
+import { Suspense } from "react";
+import SignInPage from "../../components/SignInPage/SignInPage";
+
+export default function Page() {
   return (
-    <div>
-      <h1>Signup</h1>
-    </div>
+    <Suspense>
+      <SignInPage />
+    </Suspense>
   );
 }
