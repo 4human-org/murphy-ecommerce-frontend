@@ -18,32 +18,46 @@ export default function Footer() {
   return (
     <footer className="h-fill bottom-0 flex w-screen flex-col bg-neutral-100/75 text-center">
       <nav className="md:flex md:flex-col md:space-y-4 md:p-4">
-        <ul className="p-6 md:flex md:flex-row md:place-content-center md:space-x-10 md:p-4">
-          <Link href="/#" target="_blank">
-            <li id="about">About</li>
+        <ul className="m-auto flex flex-wrap place-content-center p-6 md:flex-row md:space-x-10 md:p-4">
+          <Link href="/about" target="_blank">
+            <li id="about" className="m-2">
+              About
+            </li>
           </Link>
-          <Link href="/#" target="_blank">
-            <li id="contact">Contact</li>
+          <Link href="/contact" target="_blank">
+            <li id="contact" className="m-2">
+              Contact
+            </li>
           </Link>
-          <Link href="/#" target="_blank">
-            <li id="faq">FAQs</li>
+          <Link href="/faq" target="_blank">
+            <li id="faq" className="m-2">
+              FAQs
+            </li>
           </Link>
-          <Link href="/#" target="_blank">
-            <li id="accessibility">Accessibility</li>
+          <Link href="/accessibility" target="_blank">
+            <li id="accessibility" className="m-2">
+              Accessibility
+            </li>
           </Link>
-          <Link href="/#" target="_blank">
-            <li id="partners">Partners</li>
+          <Link href="/partners" target="_blank">
+            <li id="partners" className="m-2">
+              Partners
+            </li>
           </Link>
-          <Link href="/#" target="_blank">
-            <li id="terms-of-use">Terms of Use</li>
+          <Link href="/terms-of-use" target="_blank">
+            <li id="terms-of-use" className="m-2">
+              Terms of Use
+            </li>
           </Link>
-          <Link href="/#" target="_blank">
-            <li id="privacy-policy">Privacy Policy</li>
+          <Link href="/privacy-policy" target="_blank">
+            <li id="privacy-policy" className="m-2">
+              Privacy Policy
+            </li>
           </Link>
         </ul>
-        <ul className="flex flex-row place-content-center space-x-10 p-4">
+        <ul className="flex flex-wrap place-content-center space-x-10 p-4">
           <Link href="http://www.murphycharity.org/" target="_blank">
-            <li id="website">
+            <li id="website" className="m-2">
               {" "}
               <img className="h-6 rounded-full" src={imgUrl} />{" "}
             </li>
@@ -52,7 +66,7 @@ export default function Footer() {
             href="https://instagram.com/murphycharity_?igshid=MTI1ZDU5ODQ3Yw=="
             target="_blank"
           >
-            <li id="instagram">
+            <li id="instagram" className="m-2">
               {" "}
               <Instagram />{" "}
             </li>
@@ -61,7 +75,7 @@ export default function Footer() {
             href="https://www.facebook.com/murphycharityuganda/"
             target="_blank"
           >
-            <li id="facebook">
+            <li id="facebook" className="m-2">
               {" "}
               <Facebook />{" "}
             </li>
@@ -70,13 +84,16 @@ export default function Footer() {
             href="https://www.linkedin.com/in/murphy-charitable-foundation-uganda-70948b255/"
             target="_blank"
           >
-            <li id="linkedin_profile"> LinkedIn </li>
+            <li id="linkedin_profile" className="m-2">
+              {" "}
+              LinkedIn{" "}
+            </li>
           </Link>
           <Link
             href="https://www.linkedin.com/company/murphy-charitable-foundation-uganda/"
             target="_blank"
           >
-            <li id="linkedin_page">
+            <li id="linkedin_page" className="m-2">
               {" "}
               <Linkedin />{" "}
             </li>
@@ -85,19 +102,19 @@ export default function Footer() {
             href="https://www.tiktok.com/@murphycharity_?_t=8dUTaiyws1a&_r=1"
             target="_blank"
           >
-            <li id="tiktok">
+            <li id="tiktok" className="m-2">
               {" "}
               <Music2 />{" "}
             </li>
           </Link>
           <Link href="https://twitter.com/murphycharity" target="_blank">
-            <li id="twitter">
+            <li id="twitter" className="m-2">
               {" "}
               <Twitter />{" "}
             </li>
           </Link>
           <Link href="https://www.youtube.com/@murphycharity" target="_blank">
-            <li id="youtube">
+            <li id="youtube" className="m-2">
               {" "}
               <Youtube />{" "}
             </li>
