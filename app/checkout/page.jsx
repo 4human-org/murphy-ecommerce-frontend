@@ -21,7 +21,7 @@ export default function Page() {
     }, [])
 
     useEffect(() => {
-        setCheckoutPrice(getOrderSummaryPrice(cart).toFixed(2));
+        setCheckoutPrice(getOrderSummaryPrice(cart).toFixed(2)); //to fixed to 2 decimal places
       }, [cart]);
 
 

@@ -3,7 +3,8 @@
 import CheckoutButton from "./CheckoutButton.jsx";
 
 export default function OrderSummary({ checkoutList, checkoutPrice }) {
-  const discount = 31.9;
+  const discount = 31.90;  // Ensure the discount has two decimal places
+  const formattedCheckoutPrice = parseFloat(checkoutPrice).toFixed(2);
   const total =
     (checkoutPrice - discount).toFixed(2) < 0
       ? "0.00"
