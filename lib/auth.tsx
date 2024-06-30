@@ -8,6 +8,7 @@ import {
   browserSessionPersistence,
   setPersistence,
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
 
@@ -27,6 +28,14 @@ export async function signIn(
 
 export async function signOut() {
   return firebaseSignOut(auth);
+}
+
+export async function signUp(
+  email: string,
+  password: string,
+) {
+  
+  return createUserWithEmailAndPassword(auth, email, password);
 }
 
 export function useUser() {
