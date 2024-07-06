@@ -29,8 +29,6 @@ export default function LoginPage() {
       return;
     }
 
-    // console.log(firstName, lastName, email, password, confirmPassword)
-
     const data = {firstName, lastName, email, isAdmin}
 
     try {
@@ -39,28 +37,6 @@ export default function LoginPage() {
     } catch (error) {
       window.alert(error);
     }
-
-    // fetch('http://localhost:3030/users', {
-    //   method: 'POST', 
-    //   headers: {
-    //       'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(data),
-    // }).then(response => {
-    //   if (response.ok) {
-    //     alert("Successfully created account.")
-    //     router.push('/login')
-    //     return response.json();
-    //   } else {
-    //     throw new Error('Network response was not ok');
-    //   }
-    // })
-    //   .then(data => {
-    //       console.log('Success:', data);
-    //   })
-    //   .catch((error) => {
-    //       console.error('Error:', error);
-    //   });
   }
 
   if (user) {

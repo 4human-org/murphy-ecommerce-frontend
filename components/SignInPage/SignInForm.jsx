@@ -99,14 +99,3 @@ export default function SignInForm({ handleSubmit }) {
     </div>
   );
 }
-
-
-/*
-
-
-firstName string 
-lastName string
-isAdmin boolean
-email string 
-
-*/
